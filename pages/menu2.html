@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/style2.css">
+    <!-- JavaScript -->
+    <script src="../assets/js/script2.js"></script>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</head>
+
+<nav>
+    <div class="container">
+        <br>
+        <a href="../index.html">
+            <button class="btn btn-warning">
+                VOLVER
+            </button>
+        </a>
+    </div>
+</nav>
+
+<body>
+    <div class="container mt-4 mb-4 text-center">
+        <p class="title">Menú</p>
+        <br>
+        <div class="estanteria">
+            <h2>Estantería 1: Ciencias</h2>
+            <div class="libro"  onclick="abrirPDF('Fisica1.pdf')">
+                <img src="../assets/img/Fisica1.jpg" alt="Fisica 1">
+                <h3 class="titulo-libro">Física 1</h3>
+                <div class="libro-info">
+                    <h4>Física 1</h4>
+                    <p>Autor: Serway, Raymond</p>
+                    <p>Categoría: Ciencias</p>
+                    <p>Código: 001</p>
+                </div>
+            </div>
+            <div class="libro" onclick="abrirPDF('Fisica2.pdf')">
+                <img src="../assets/img/Fisica2.jpg" alt="Fisica 2">
+                <h3 class="titulo-libro">Física 2</h3>
+                <div class="libro-info">
+                    <h4>Física 2</h4>
+                    <p>Autor: Serway, Raymond</p>
+                    <p>Categoría: Ciencias</p>
+                    <p>Código: 002</p>
+                </div>
+            </div>
+            <div class="libro" onclick="abrirPDF('Quimica1.pdf')">
+                <img src="../assets/img/Quimica1.jpg" alt="Quimica 1">
+                <h3 class="titulo-libro">Quimica 1</h3>
+                <div class="libro-info">
+                    <h4>Química 1</h4>
+                    <p>Autor: Brown, Lemay, Bursten</p>
+                    <p>Categoría: Ciencias</p>
+                    <p>Código: 003</p>
+                </div>
+            </div>
+        </div>
+        <div class="estanteria">
+            <h2>Estantería 2: Tecnología</h2>
+            <div class="libro" onclick="abrirPDF('Analisis.pdf')">
+                <img src="../assets/img/Analisis.jpg" alt="Analisis">
+                <h3 class="titulo-libro">Analisis y diseño de sistemas</h3>
+                <div class="libro-info">
+                    <h4>Analisis y diseño de sistemas</h4>
+                    <p>Autor: Kenneth E. Kendall, Julie E Kendall</p>
+                    <p>Categoría: Tecnología</p>
+                    <p>Código: 004</p>
+                </div>
+            </div>
+            <div class="libro" onclick="abrirPDF('ATI.pdf')">
+                <img src="../assets/img/ATI.jpg" alt="Aplicación de las Tecnologías">
+                <h3 class="titulo-libro">Aplicación de las Tecnologías</h3>
+                <div class="libro-info">
+                    <h4>Aplicación de las Tecnologías</h4>
+                    <p>Autor: Elizondo, Sarabia</p>
+                    <p>Categoría: Tecnología</p>
+                    <p>Código: 005</p>
+                </div>
+            </div>
+            <div class="libro" onclick="abrirPDF('Sistemas.pdf')">
+                <img src="../assets/img/Sistemas.jpg" alt="Analisis de sistemas">
+                <h3 class="titulo-libro">Analisis de sistemas, diseños y metodos</h3>
+                <div class="libro-info">
+                    <h4>Analisis de sistemas, diseños y metodos</h4>
+                    <p>Autor: Whitten</p>
+                    <p>Categoría: Tecnología</p>
+                    <p>Código: 006</p>
+                </div>
+            </div>
+        </div>
+        <div class="estanteria">
+            <h2>Estantería 3: Cálculo</h2>
+            <div class="libro" onclick="abrirPDF('Algebra.pdf')">
+                <img src="../assets/img/Algebra.jpg" alt="Algebra">
+                <h3 class="titulo-libro">Algebra lineal</h3>
+                <div class="libro-info">
+                    <h4>Algebra lineal, una introducción moderna</h4>
+                    <p>Autor: David Poole</p>
+                    <p>Categoría: Cálculo</p>
+                    <p>Código: 007</p>
+                </div>
+            </div>
+            <div class="libro" onclick="abrirPDF('Calculo2.pdf')">
+                <img src="../assets/img/Calculo2.jpg" alt="Calculo2">
+                <h3 class="titulo-libro">Cálculo 2</h3>
+                <div class="libro-info">
+                    <h4>Cálculo 2</h4>
+                    <p>Autor: Dpto de ciencias fisico-matematicas</p>
+                    <p>Categoría: Cálculo</p>
+                    <p>Código: 008</p>
+                </div>
+            </div>
+            <div class="libro" onclick="abrirPDF('Ecuaciones.pdf')">
+                <img src="../assets/img/Ecuaciones.jpg" alt="Ecuaciones">
+                <h3 class="titulo-libro">Ecuaciones</h3>
+                <div class="libro-info">
+                    <h4>Ecuaciones diferenciales</h4>
+                    <p>Autor: Dennis G. Zill</p>
+                    <p>Categoría: Cálculo</p>
+                    <p>Código: 009</p>
+                </div>
+            </div>
+        </div>
+        <div class="estanteria">
+            <h2>Estantería 4: Programación</h2>
+            <div class="libro" onclick="abrirPDF('Java.pdf')">
+                <img src="../assets/img/Java.jpg" alt="Java">
+                <h3 class="titulo-libro">Cómo programar en Java</h3>
+                <div class="libro-info">
+                    <h4>Cómo programar en Java</h4>
+                    <p>Autor: Deitel</p>
+                    <p>Categoría: Programación</p>
+                    <p>Código: 010</p>
+                </div>
+            </div>
+            <div class="libro" onclick="abrirPDF('HTML.pdf')">
+                <img src="../assets/img/HTML.jpg" alt="HTML">
+                <h3 class="titulo-libro">El gran libro de HTML5, CSS3 y JavaScript</h3>
+                <div class="libro-info">
+                    <h4>El gran libro de HTML5, CSS3 y JavaScript</h4>
+                    <p>Autor: Juan Diego Gauchat</p>
+                    <p>Categoría: Programación</p>
+                    <p>Código: 011</p>
+                </div>
+            </div>
+            <div class="libro" onclick="abrirPDF('C.pdf')">
+                <img src="../assets/img/C.jpg" alt="c">
+                <h3 class="titulo-libro">Fundamentos de programación. Piensa en C</h3>
+                <div class="libro-info">
+                    <h4>Fundamentos de programación. Piensa en C</h4>
+                    <p>Autor: Osvaldo Cairó Battistutti</p>
+                    <p>Categoría: Programación</p>
+                    <p>Código: 012</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<footer></footer>
+
+</html>
