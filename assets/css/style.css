@@ -78,8 +78,10 @@ button.btn-success:hover {
 }
 
 .libro img {
-    max-width: 100px;
+    max-width: 115px;
     max-height: 140px;
+    min-height: 140px;
+    min-width: 115px;
     margin: 10px;
 }
 p {
