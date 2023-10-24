@@ -67,9 +67,9 @@ button.btn-success:hover {
     text-align: center;
     position: absolute;
     bottom: 0; 
-    transform: translateY(-100%); /* Empuja el contenido hacia abajo */
+    transform: translateY(-180px); /* Empuja el contenido hacia abajo */
     transition: transform 0.3s;
-    width: 125%;
+    width: 135%;
     border: 2px solid #000;
     border-radius: 5%;
 }
@@ -112,8 +112,8 @@ p {
     }
 }
 .libro:hover {
-    filter: brightness(130%); /* Aumenta el brillo en un 10% */
-    cursor: pointer; /* Cambia el cursor a 'pointer' para indicar que es seleccionable */
+    filter: brightness(135%);
+    cursor: pointer; 
 }
 
 .libro:hover .libro-info {
