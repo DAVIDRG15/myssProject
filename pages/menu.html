@@ -18,13 +18,28 @@
 </head>
 
 <nav>
-    <div class="container">
+<!--     <div class="container">
         <br>
         <a href="../index.html">
             <button class="btn btn-warning">
                 VOLVER
             </button>
         </a>
+    </div> -->
+    <div class="container">
+        <br>
+        <div class="d-flex justify-content-between">
+            <a href="../index.html">
+                <button class="btn btn-warning">
+                    VOLVER
+                </button>
+            </a>
+            <a href="../pages/pagina2.html">
+                <button class="btn btn-warning">
+                    PÁGINA 2
+                </button>
+            </a>
+        </div>
     </div>
 </nav>
 
@@ -35,7 +50,7 @@
         <div class="estanteria">
             <h2>Estantería 1: Ciencias</h2>
             <div class="libro" onclick="abrirPDF('Fisica1.pdf')">
-                <img src="../assets/img/Fisica1.jpg" alt="Fisica 1">
+                <img src="../assets/img/Fisica1.jpg" alt="Física 1">
                 <h3 class="titulo-libro">Física 1</h3>
                 <div class="libro-info">
                     <h4>Física 1</h4>
@@ -45,7 +60,7 @@
                 </div>
             </div>
             <div class="libro" onclick="abrirPDF('Fisica2.pdf')">
-                <img src="../assets/img/Fisica2.jpg" alt="Fisica 2">
+                <img src="../assets/img/Fisica2.jpg" alt="Física 2">
                 <h3 class="titulo-libro">Física 2</h3>
                 <div class="libro-info">
                     <h4>Física 2</h4>
@@ -55,8 +70,8 @@
                 </div>
             </div>
             <div class="libro" onclick="abrirPDF('Quimica1.pdf')">
-                <img src="../assets/img/Quimica1.jpg" alt="Quimica 1">
-                <h3 class="titulo-libro">Quimica 1</h3>
+                <img src="../assets/img/Quimica1.jpg" alt="Química 1">
+                <h3 class="titulo-libro">Química 1</h3>
                 <div class="libro-info">
                     <h4>Química 1</h4>
                     <p>Autor: Brown, Lemay, Bursten</p>
@@ -68,10 +83,10 @@
         <div class="estanteria">
             <h2>Estantería 2: Tecnología</h2>
             <div class="libro" onclick="abrirPDF('Analisis.pdf')">
-                <img src="../assets/img/Analisis.jpg" alt="Analisis">
-                <h3 class="titulo-libro">Analisis y diseño de sistemas</h3>
+                <img src="../assets/img/Analisis.jpg" alt="Análisis">
+                <h3 class="titulo-libro">Análisis y diseño de sistemas</h3>
                 <div class="libro-info">
-                    <h4>Analisis y diseño de sistemas</h4>
+                    <h4>Análisis y diseño de sistemas</h4>
                     <p>Autor: Kenneth E. Kendall, Julie E Kendall</p>
                     <p>Categoría: Tecnología</p>
                     <p>Código: 004</p>
@@ -88,10 +103,10 @@
                 </div>
             </div>
             <div class="libro" onclick="abrirPDF('Sistemas.pdf')">
-                <img src="../assets/img/Sistemas.jpg" alt="Analisis de sistemas">
-                <h3 class="titulo-libro">Analisis de sistemas, diseños y metodos</h3>
+                <img src="../assets/img/Sistemas.jpg" alt="Análisis de sistemas">
+                <h3 class="titulo-libro">Análisis de sistemas, diseños y metodos</h3>
                 <div class="libro-info">
-                    <h4>Analisis de sistemas, diseños y metodos</h4>
+                    <h4>Análisis de sistemas, diseños y metodos</h4>
                     <p>Autor: Whitten</p>
                     <p>Categoría: Tecnología</p>
                     <p>Código: 006</p>
@@ -101,17 +116,17 @@
         <div class="estanteria">
             <h2>Estantería 3: Cálculo</h2>
             <div class="libro" onclick="abrirPDF('Algebra.pdf')">
-                <img src="../assets/img/Algebra.jpg" alt="Algebra">
-                <h3 class="titulo-libro">Algebra lineal</h3>
+                <img src="../assets/img/Algebra.jpg" alt="Álgebra">
+                <h3 class="titulo-libro">Álgebra lineal</h3>
                 <div class="libro-info">
-                    <h4>Algebra lineal, una introducción moderna</h4>
+                    <h4>Álgebra lineal, una introducción moderna</h4>
                     <p>Autor: David Poole</p>
                     <p>Categoría: Cálculo</p>
                     <p>Código: 007</p>
                 </div>
             </div>
             <div class="libro" onclick="abrirPDF('Calculo2.pdf')">
-                <img src="../assets/img/Calculo2.jpg" alt="Calculo2">
+                <img src="../assets/img/Calculo2.jpg" alt="Cálculo2">
                 <h3 class="titulo-libro">Cálculo 2</h3>
                 <div class="libro-info">
                     <h4>Cálculo 2</h4>
@@ -134,7 +149,7 @@
         <div class="estanteria">
             <h2>Estantería 4: Programación</h2>
             <div class="libro" onclick="abrirPDF('Java.pdf')">
-                <img src="../assets/img/Java.jpg" alt="Java">
+                <img src="../assets/img/Java.jpg" alt="Cómo programar en Java">
                 <h3 class="titulo-libro">Cómo programar en Java</h3>
                 <div class="libro-info">
                     <h4>Cómo programar en Java</h4>
@@ -144,7 +159,7 @@
                 </div>
             </div>
             <div class="libro" onclick="abrirPDF('HTML.pdf')">
-                <img src="../assets/img/HTML.jpg" alt="HTML">
+                <img src="../assets/img/HTML.jpg" alt="El gran libro de HTML5, CSS3 y JavaScript">
                 <h3 class="titulo-libro">El gran libro de HTML5, CSS3 y JavaScript</h3>
                 <div class="libro-info">
                     <h4>El gran libro de HTML5, CSS3 y JavaScript</h4>
@@ -154,7 +169,7 @@
                 </div>
             </div>
             <div class="libro" onclick="abrirPDF('C.pdf')">
-                <img src="../assets/img/C.jpg" alt="c">
+                <img src="../assets/img/C.jpg" alt="Fundamentos de programación. Piensa en C">
                 <h3 class="titulo-libro">Fundamentos de programación. Piensa en C</h3>
                 <div class="libro-info">
                     <h4>Fundamentos de programación. Piensa en C</h4>
