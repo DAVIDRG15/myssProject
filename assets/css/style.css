@@ -67,7 +67,7 @@ button.btn-success:hover {
     text-align: center;
     position: absolute;
     bottom: 0; 
-    transform: translateY(-180px); /* Empuja el contenido hacia abajo */
+    transform: translateY(-190px); /* Empuja el contenido hacia abajo */
     transition: transform 0.3s;
     width: 135%;
     border: 2px solid #000;
@@ -83,6 +83,13 @@ button.btn-success:hover {
     min-height: 140px;
     min-width: 115px;
     margin: 10px;
+}
+.libro :hover {
+    max-width: 135px;
+    max-height: 155px;
+    min-height: 155px;
+    min-width: 135px;
+    margin: 3px;
 }
 p {
     font-size: 80%;
