@@ -58,7 +58,7 @@ button.btn-success:hover {
     position: relative;    
 }
 .libro-info p {
-    margin: 0; /* Para eliminar el espacio entre párrafos */
+    margin: 0; 
 }
 .libro-info {
     display: none;
@@ -67,7 +67,7 @@ button.btn-success:hover {
     text-align: center;
     position: absolute;
     bottom: 0; 
-    transform: translateY(-190px); /* Empuja el contenido hacia abajo */
+    transform: translateY(-190px);
     transition: transform 0.3s;
     width: 135%;
     border: 2px solid #000;
