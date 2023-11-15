@@ -4,31 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Administrador - Login</title>
     <!-- CSS -->
     <link rel="stylesheet" href="../assets/css/style.css">
-    <!-- JavaScript -->
-    <script src="../assets/js/script.js"></script>
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+    </script>
 </head>
 
-<nav>
-    <div class="container">
-        <br>
-        <div class="d-flex justify-content-end">
-            <a href="../php/loginAdmin.php">
-                <button type="submit" class="btn btn-outline-warning">Administrador</button>
-            </a>
-        </div>
-    </div>
-</nav>
-
 <body>
+    <h2>Iniciar sesión</h2>
+    <form action="admin/login.php" method="post">
+        <label for="id_admin">ID:</label>
+        <input type="text" id="id_admin" name="id_admin" required><br>
+
+        <label for="contraseña">Contraseña:</label>
+        <input type="password" id="contraseña" name="contraseña" required><br>
+
+        <input type="submit" value="Iniciar sesión">
+    </form>
+
+
     <div class="login">
         <div class="row">
             <div class="col-md-6 background-image"></div>
@@ -38,14 +37,14 @@
                         <img src="../assets/img/Usuario.png" alt="Usuario" class="img-fluid mt-4" width="200px">
                     </div>
                     <br><br>
-                    <form id="loginForm">
+                    <form id="loginForm" action="admin/login.php" method="post">
                         <div class="col-md-12">
-                            <label for="usuario" class="form-label">Usuario</label>
-                            <input type="text" class="form-control" id="usuario" required>
+                            <label for="usuario" class="form-label">ID</label>
+                            <input type="text" class="form-control" id="id_admin" name="id_admin" required>
                         </div><br>
                         <div class="col-md-12">
                             <label for="password" class="form-label">Contraseña</label>
-                            <input type="password" class="form-control" id="password" required>
+                            <input type="password" class="form-control" id="contraseña" name="contraseña" required>
                         </div><br>
                         <div class="text-center">
                             <button type="submit" class="btn btn-success btnLogin mb-4">Ingresar</button>
@@ -56,25 +55,8 @@
         </div>
     </div>
 
-    <script>
-        // Login temporal
-        document.addEventListener('DOMContentLoaded', function () {
-            document.getElementById('loginForm').addEventListener('submit', function (e) {
-                e.preventDefault();
 
-                var usuario = document.getElementById('usuario').value;
-                var password = document.getElementById('password').value;
 
-                if (usuario === 'admin' && password === '123') {
-                    window.location.href = 'menuLibros.html';
-                } else {
-                    alert('Credenciales incorrectas. Inténtelo de nuevo.');
-                }
-            });
-        });
-    </script>
 </body>
-
-<footer></footer>
 
 </html>
