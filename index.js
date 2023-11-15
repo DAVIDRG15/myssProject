@@ -8,7 +8,7 @@ function createWindow() {
     height: 1080,
   });
 
-  mainWindow.loadFile('index.html');
+  mainWindow.loadFile('index.php');
 
   mainWindow.on('closed', function () {
     mainWindow = null;
