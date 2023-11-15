@@ -15,7 +15,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             VALUES ('$codigo', '$titulo', '$autor', '$editorial', '$categoria', '$subcategoria', '$cantidad', '$estatus')";
 
     if ($conn->query($sql) === TRUE) {
-        echo "Libro agregado correctamente";
+        echo "<script>alert('Libro agregado con éxito'); window.location.href = 'admin.php';</script>";
+        exit();
     } else {
         echo "Error al agregar libro: " . $conn->error;
     }

@@ -1,5 +1,5 @@
 <?php
-include 'conexion.php';
+include '../conexion.php';
 
 $sql = "SELECT * FROM libro";
 $result = $conn->query($sql);

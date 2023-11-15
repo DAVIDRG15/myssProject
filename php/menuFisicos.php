@@ -1,3 +1,8 @@
+<?php
+include 'conexion.php';
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,6 +10,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin - Menú Libros Físicos</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css">
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -13,70 +20,55 @@
     </script>
 </head>
 
+<nav>
+    <div class="container">
+        <br>
+        <div class="d-flex justify-content-between">
+            <a href="../pages/menuLibros.html">
+                <button class="btn btn-warning">
+                    VOLVER
+                </button>
+            </a>
+        </div>
+    </div>
+</nav>
+
 <body>
 
     <div class="container menuFisicos">
-        <h1>Administrador - Menú Libros Físicos</h1><br>
+        <h1 class="mt-4 mb-4">Libros Físicos</h1>
 
-        <div class="container create mt-2 mb-2">
-            <h2>Agregar Libro</h2> 
-            <form action="admin/create.php" method="post">
-            <label class="form-label">Código:</label>
-                <input class="form-control" type="text" name="codigo" required><br>
-            <label class="form-label">Título:</label>
-                <input class="form-control" type="text" name="titulo" required><br>
-            <label class="form-label">Autor:</label>
-                <input class="form-control" type="text" name="autor" required><br>
-            <label class="form-label">Editorial:</label>
-                <input class="form-control" type="text" name="editorial" required><br>
-            <label class="form-label">Categoría:</label>
-                <input class="form-control" type="text" name="categoria" required><br>
-            <label class="form-label">Subcategoría:</label>
-                <input class="form-control" type="text" name="subcategoria" required><br>
-            <label class="form-label">Cantidad:</label>
-                 <input class="form-control" type="number" name="cantidad" required><br>
-            <label class="form-label">Estatus:</label>
-                <select class="form-control" name="estatus" required>
-                    <option value="PRESTAMO">Prestamo</option>
-                    <option value="DISPONIBLE">Disponible</option>
-                </select><br>
-                <input class="btn btn-success" type="submit" value="Agregar Libro">
-            </form>
-        </div><br>
+        <div class="container read mt-2 mb-4">
+            <?php 
+            $sql = "SELECT * FROM libro";
+            $result = $conn->query($sql);
 
-        <div class="container read">
-            <h2>Libros</h2>
-            <?php include 'admin/read.php'; ?>
-        </div><br>
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    echo '<div class="card mb-3">';
+                    echo '<div class="card-body">';
+                    echo '<h5 class="card-title">Título: ' . $row["titulo_lib"] . '</h5>';
+                    echo '<p class="card-text">Código: ' . $row["codigo_libro"] . '</p>';
+                    echo '<p class="card-text">Autor: ' . $row["autor_libro"] . '</p>';
+                    echo '<p class="card-text">Editorial: ' . $row["editorial"] . '</p>';
+                    echo '<p class="card-text">Categoría: ' . $row["categoria_libro"] . '</p>';
+                    echo '<p class="card-text">Subcategoría: ' . $row["subcategoria_libro"] . '</p>';
+                    echo '<p class="card-text">Cantidad: ' . $row["cantidad"] . '</p>';
+                    echo '<p class="card-text">Estatus: ' . $row["estatus"] . '</p>';
+                    echo '</div>';
+                    echo '</div>';
+                }
+            } else {
+                echo '<p class="lead">0 resultados</p>';
+            }
 
-        <div class="container update">
-            <h2>Actualizar Libro</h2>
-            <form action="admin/update.php" method="post">
-                Código del Libro a actualizar: <input type="text" name="codigo" required><br>
-                Nuevo Título: <input type="text" name="titulo" required><br>
-                Nuevo Autor: <input type="text" name="autor" required><br>
-                Nueva Editorial: <input type="text" name="editorial" required><br>
-                Nueva Categoría: <input type="text" name="categoria" required><br>
-                Nueva Subcategoría: <input type="text" name="subcategoria" required><br>
-                Nueva Cantidad: <input type="number" name="cantidad" required><br>
-                Nuevo Estatus:
-                <select name="estatus" required>
-                    <option value="PRESTAMO">Prestamo</option>
-                    <option value="DISPONIBLE">Disponible</option>
-                </select><br>
-                <input type="submit" value="Actualizar Libro">
-            </form>
-        </div><br>
-
-        <div class="container delete">
-            <h2>Eliminar Libro</h2>
-            <form action="admin/delete.php" method="post">
-                Código del Libro a eliminar: <input type="text" name="codigo" required><br>
-                <input type="submit" value="Eliminar Libro">
-            </form>
-        </div><br>
+            $conn->close();
+        ?>
+        </div>
     </div>
 
 </body>
+
+<footer></footer>
 
 </html>
