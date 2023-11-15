@@ -16,24 +16,31 @@
 <body>
 
     <div class="container menuFisicos">
-        <h1>Administrador - Menú Libros Físicos</h1>
+        <h1>Administrador - Menú Libros Físicos</h1><br>
 
-        <div class="container create">
-            <h2>Agregar Libro</h2>
+        <div class="container create mt-2 mb-2">
+            <h2>Agregar Libro</h2> 
             <form action="admin/create.php" method="post">
-                Código: <input type="text" name="codigo" required><br>
-                Título: <input type="text" name="titulo" required><br>
-                Autor: <input type="text" name="autor" required><br>
-                Editorial: <input type="text" name="editorial" required><br>
-                Categoría: <input type="text" name="categoria" required><br>
-                Subcategoría: <input type="text" name="subcategoria" required><br>
-                Cantidad: <input type="number" name="cantidad" required><br>
-                Estatus:
-                <select name="estatus" required>
+            <label class="form-label">Código:</label>
+                <input class="form-control" type="text" name="codigo" required><br>
+            <label class="form-label">Título:</label>
+                <input class="form-control" type="text" name="titulo" required><br>
+            <label class="form-label">Autor:</label>
+                <input class="form-control" type="text" name="autor" required><br>
+            <label class="form-label">Editorial:</label>
+                <input class="form-control" type="text" name="editorial" required><br>
+            <label class="form-label">Categoría:</label>
+                <input class="form-control" type="text" name="categoria" required><br>
+            <label class="form-label">Subcategoría:</label>
+                <input class="form-control" type="text" name="subcategoria" required><br>
+            <label class="form-label">Cantidad:</label>
+                 <input class="form-control" type="number" name="cantidad" required><br>
+            <label class="form-label">Estatus:</label>
+                <select class="form-control" name="estatus" required>
                     <option value="PRESTAMO">Prestamo</option>
                     <option value="DISPONIBLE">Disponible</option>
                 </select><br>
-                <input type="submit" value="Agregar Libro">
+                <input class="btn btn-success" type="submit" value="Agregar Libro">
             </form>
         </div><br>
 
