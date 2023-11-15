@@ -16,7 +16,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             WHERE codigo_libro='$codigo'";
 
     if ($conn->query($sql) === TRUE) {
-        echo "Libro actualizado correctamente";
+        if ($conn->affected_rows > 0) {
+            echo "<script>alert('Libro actualizado correctamente'); window.location.href = 'admin.php';</script>";
+            exit();
+        } else {
+            echo "<script>alert('No se encontró un libro con el código \"$codigo\" para actualizar.'); window.location.href = 'admin.php';</script>";
+        }
     } else {
         echo "Error al actualizar libro: " . $conn->error;
     }
