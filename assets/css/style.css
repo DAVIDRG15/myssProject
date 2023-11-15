@@ -180,6 +180,25 @@ p {
     background-color: rgba(0, 97, 53, 0.350);
 }
 
+.background-image2 {
+    background-image: url('../img/Fime2.jpg');
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+    height: 110vh;
+    position: relative;
+}
+
+.background-image2::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 97, 53, 0.350);
+}
+
 .loginFondo {
     background-color: #f4f2ed;
 }

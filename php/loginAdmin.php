@@ -15,22 +15,12 @@
     </script>
 </head>
 
+<nav></nav>
+
 <body>
-    <h2>Iniciar sesión</h2>
-    <form action="admin/login.php" method="post">
-        <label for="id_admin">ID:</label>
-        <input type="text" id="id_admin" name="id_admin" required><br>
-
-        <label for="contraseña">Contraseña:</label>
-        <input type="password" id="contraseña" name="contraseña" required><br>
-
-        <input type="submit" value="Iniciar sesión">
-    </form>
-
-
     <div class="login">
         <div class="row">
-            <div class="col-md-6 background-image"></div>
+            <div class="col-md-6 background-image2"></div>
             <div class="col-md-6 p-5">
                 <div class="container loginFondo mt-2 mb-2">
                     <div class="text-center">
@@ -55,8 +45,8 @@
         </div>
     </div>
 
-
-
 </body>
+
+<footer></footer>
 
 </html>

@@ -15,7 +15,21 @@
     </script>
 </head>
 
-<nav></nav>
+<nav>
+    <div class="container">
+        <br>
+        <div class="d-flex justify-content-between">
+            <div></div>
+            <div class="ml-auto">
+                <a href="../../index.php">
+                    <button class="btn btn-danger">
+                        SALIR
+                    </button>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
 
 <body>
 
@@ -23,23 +37,23 @@
         <h1>Administrador - Menú Libros Físicos</h1><br>
 
         <div class="container create mt-2 mb-2">
-            <h2>Agregar Libro</h2> 
+            <h2>Agregar Libro</h2>
             <form action="create.php" method="post">
-            <label class="form-label">Código:</label>
+                <label class="form-label">Código:</label>
                 <input class="form-control" type="text" name="codigo" required><br>
-            <label class="form-label">Título:</label>
+                <label class="form-label">Título:</label>
                 <input class="form-control" type="text" name="titulo" required><br>
-            <label class="form-label">Autor:</label>
+                <label class="form-label">Autor:</label>
                 <input class="form-control" type="text" name="autor" required><br>
-            <label class="form-label">Editorial:</label>
+                <label class="form-label">Editorial:</label>
                 <input class="form-control" type="text" name="editorial" required><br>
-            <label class="form-label">Categoría:</label>
+                <label class="form-label">Categoría:</label>
                 <input class="form-control" type="text" name="categoria" required><br>
-            <label class="form-label">Subcategoría:</label>
+                <label class="form-label">Subcategoría:</label>
                 <input class="form-control" type="text" name="subcategoria" required><br>
-            <label class="form-label">Cantidad:</label>
-                 <input class="form-control" type="number" name="cantidad" required><br>
-            <label class="form-label">Estatus:</label>
+                <label class="form-label">Cantidad:</label>
+                <input class="form-control" type="number" name="cantidad" required><br>
+                <label class="form-label">Estatus:</label>
                 <select class="form-control" name="estatus" required>
                     <option value="PRESTAMO">Prestamo</option>
                     <option value="DISPONIBLE">Disponible</option>
