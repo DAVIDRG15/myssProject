@@ -28,7 +28,7 @@
         </div>
         <br><br>
         <!-- btn temporal login -->
-        <a href="pages/login.html">
+        <a href="php/loginUser.php">
             <button class="btn btn-success btnIndex">INICIA SESIÓN</button>
         </a>
 <!--         <a href="pages/menu.html">

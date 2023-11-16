@@ -38,14 +38,14 @@
                         <img src="../assets/img/Usuario.png" alt="Usuario" class="img-fluid mt-4" width="200px">
                     </div>
                     <br><br>
-                    <form id="loginForm">
+                    <form id="loginForm" action="user/login.php" method="post">
                         <div class="col-md-12">
                             <label for="usuario" class="form-label">Matrícula</label>
-                            <input type="text" class="form-control" id="usuario" required>
+                            <input type="text" class="form-control" id="matricula" name="matricula" required>
                         </div><br>
                         <div class="col-md-12">
                             <label for="password" class="form-label">Contraseña</label>
-                            <input type="password" class="form-control" id="password" required>
+                            <input type="password" class="form-control" id="contraseña" name="contraseña" required>
                         </div><br>
                         <div class="text-center">
                             <button type="submit" class="btn btn-success btnLogin mb-4">Ingresar</button>
@@ -55,24 +55,6 @@
             </div>
         </div>
     </div>
-
-    <script>
-        // Login temporal
-        document.addEventListener('DOMContentLoaded', function () {
-            document.getElementById('loginForm').addEventListener('submit', function (e) {
-                e.preventDefault();
-
-                var usuario = document.getElementById('usuario').value;
-                var password = document.getElementById('password').value;
-
-                if (usuario === 'admin' && password === '123') {
-                    window.location.href = 'menuLibros.html';
-                } else {
-                    alert('Credenciales incorrectas. Inténtelo de nuevo.');
-                }
-            });
-        });
-    </script>
 </body>
 
 <footer></footer>

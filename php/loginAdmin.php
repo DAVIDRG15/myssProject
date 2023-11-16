@@ -15,7 +15,16 @@
     </script>
 </head>
 
-<nav></nav>
+<nav>
+    <div class="container">
+        <br>
+        <div class="d-flex justify-content-end">
+            <a href="../php/loginUser.php">
+                <button type="submit" class="btn btn-outline-warning">Usuario</button>
+            </a>
+        </div>
+    </div>
+</nav>
 
 <body>
     <div class="login">

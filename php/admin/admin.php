@@ -82,7 +82,7 @@
                     <option value="PRESTAMO">Prestamo</option>
                     <option value="DISPONIBLE">Disponible</option>
                 </select><br>
-                <input class="btn btn-success" type="submit" value="Actualizar Lbro">
+                <input class="btn btn-success" type="submit" value="Actualizar Libro">
             </form>
         </div><br>
 
