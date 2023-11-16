@@ -70,15 +70,15 @@
         <div class="container update">
             <h2>Actualizar Libro</h2>
             <form action="update.php" method="post">
-                Código del Libro a actualizar: <input type="text" name="codigo" required><br>
-                Nuevo Título: <input type="text" name="titulo" required><br>
-                Nuevo Autor: <input type="text" name="autor" required><br>
-                Nueva Editorial: <input type="text" name="editorial" required><br>
-                Nueva Categoría: <input type="text" name="categoria" required><br>
-                Nueva Subcategoría: <input type="text" name="subcategoria" required><br>
-                Nueva Cantidad: <input type="number" name="cantidad" required><br>
-                Nuevo Estatus:
-                <select name="estatus" required>
+                <label class="form-label">Código del Libro a actualizar: </label><input class="form-control" type="text" name="codigo" required><br>
+                <label class="form-label">Nuevo Título: </label><input class="form-control" type="text" name="titulo" required><br>
+                <label class="form-label">Nuevo Autor: </label><input class="form-control" type="text" name="autor" required><br>
+                <label class="form-label">Nueva Editorial: </label><input class="form-control" type="text" name="editorial" required><br>
+                <label class="form-label">Nueva Categoría: </label><input class="form-control" type="text" name="categoria" required><br>
+                <label class="form-label">Nueva Subcategoría: </label><input class="form-control" type="text" name="subcategoria" required><br>
+                <label class="form-label">Nueva Cantidad: </label><input class="form-control" type="number" name="cantidad" required><br>
+                <label class="form-label">Nuevo Estatus:</label>
+                <select class="form-control" name="estatus" required>
                     <option value="PRESTAMO">Prestamo</option>
                     <option value="DISPONIBLE">Disponible</option>
                 </select><br>
@@ -89,7 +89,7 @@
         <div class="container delete">
             <h2>Eliminar Libro</h2>
             <form action="delete.php" method="post">
-                Código del Libro a eliminar: <input type="text" name="codigo" required><br>
+                <label class="form-label">Código del Libro a eliminar:</label> <input class="form-control"type="text" name="codigo" required><br>
                 <input type="submit" value="Eliminar Libro">
             </form>
         </div><br>
