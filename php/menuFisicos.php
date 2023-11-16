@@ -24,7 +24,7 @@ include 'conexion.php';
     <div class="container">
         <br>
         <div class="d-flex justify-content-between">
-            <a href="../pages/menuLibros.html">
+            <a href="menuLibros.php">
                 <button class="btn btn-warning">
                     VOLVER
                 </button>
