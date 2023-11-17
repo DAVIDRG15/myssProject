@@ -45,7 +45,7 @@
                     <option value="PRESTADO">Prestado</option>
                     <option value="DEVUELTO">Devuelto</option>
                 </select><br>
-                <input type="submit" value="Actualizar Prestamo">
+                <input class="btn btn-success" type="submit" value="Actualizar Prestamo">
             </form>
         </div><br>
         <div class="container read">
