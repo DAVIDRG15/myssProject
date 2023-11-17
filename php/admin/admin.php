@@ -93,10 +93,10 @@
                 <input type="submit" value="Eliminar Libro">
             </form>
         </div><br>
-        <div class="container read">
-            <h2>Prestamos</h2>
-            <?php include 'prestados.php'; ?>
-        </div><br>
+        
+        <a href="prestamos.php">
+        <button class="btn btn-success btnLogin mb-4">Préstamos</button>
+        </a>
     </div>
 
 </body>
