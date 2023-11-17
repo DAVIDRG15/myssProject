@@ -82,7 +82,7 @@
                     <option value="PRESTAMO">Prestamo</option>
                     <option value="DISPONIBLE">Disponible</option>
                 </select><br>
-                <input class="btn btn-success" type="submit" value="Actualizar Libro">
+                <input type="submit" value="Actualizar Libro">
             </form>
         </div><br>
 
@@ -90,8 +90,12 @@
             <h2>Eliminar Libro</h2>
             <form action="delete.php" method="post">
                 <label class="form-label">Código del Libro a eliminar:</label> <input class="form-control"type="text" name="codigo" required><br>
-                <input class="btn btn-success" type="submit" value="Eliminar Libro">
+                <input type="submit" value="Eliminar Libro">
             </form>
+        </div><br>
+        <div class="container read">
+            <h2>Prestamos</h2>
+            <?php include 'prestados.php'; ?>
         </div><br>
     </div>
 

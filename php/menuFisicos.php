@@ -40,6 +40,40 @@ include 'conexion.php';
 
         <div class="container read mt-2 mb-4">
             <?php 
+            session_start();
+            $matriculap = $_SESSION["matricula"];
+            if (isset($_GET['apartar']) && $_GET['apartar'] == 'true') {
+                $codigoLibro = $_GET['id'];
+                $sqlCantidad = "SELECT cantidad FROM libro WHERE codigo_libro = '$codigoLibro'";
+                $resultCantidad = $conn->query($sqlCantidad);
+                $sqltitulo = "SELECT titulo_lib FROM libro WHERE codigo_libro = '$codigoLibro'";
+                $resultTitulo = $conn->query($sqltitulo);
+                $titulo = ($resultTitulo->num_rows > 0) ? $resultTitulo->fetch_assoc()['titulo_lib'] : '';
+                $sqlnombre = "SELECT nombre_usu FROM usuario WHERE matricula = '$matriculap'";
+                $resultNombre = $conn->query($sqlnombre);
+                $nombre = ($resultNombre->num_rows > 0) ? $resultNombre->fetch_assoc()['nombre_usu'] : '';
+                if ($resultCantidad->num_rows > 0) {
+                    $rowCantidad = $resultCantidad->fetch_assoc();
+                    $cantidadActual = $rowCantidad["cantidad"];
+                        if ($cantidadActual > 1) {
+                        $sqlUpdateCantidad = "UPDATE libro SET cantidad = cantidad - 1 WHERE codigo_libro = '$codigoLibro'";
+                        $conn->query($sqlUpdateCantidad);
+                    } elseif ($cantidadActual == 1) {
+                        $sqlUpdateEstado = "UPDATE libro SET estatus = 'PRESTAMO', cantidad = 0 WHERE codigo_libro = '$codigoLibro'";
+                        $conn->query($sqlUpdateEstado);
+                    }
+                }
+                $fechaPrestamo = date("Y-m-d");
+                $sql2 = "INSERT INTO prestamos (codigo_lib, titulo_lib, matricula, fecha_prestamo, estatus_prestamo)
+                VALUES ('$codigoLibro', '$titulo', '$matriculap', '$fechaPrestamo', 'PRESTADO')";
+                if ($conn->query($sql2) === TRUE) {
+                    echo "<script>alert('Libro apartado con éxito'); window.location.href = 'menuFisicos.php';</script>";
+                } else {
+                    echo "<script>alert('Error al apartar el libro'); window.location.href = 'menuFisicos.php';</script>" . $conn->error . '</div>';
+                }
+                header("Location: menuFisicos.php");
+                exit();
+            }
             $sql = "SELECT * FROM libro";
             $result = $conn->query($sql);
 
@@ -55,6 +89,11 @@ include 'conexion.php';
                     echo '<p class="card-text">Subcategoría: ' . $row["subcategoria_libro"] . '</p>';
                     echo '<p class="card-text">Cantidad: ' . $row["cantidad"] . '</p>';
                     echo '<p class="card-text">Estatus: ' . $row["estatus"] . '</p>';
+                    if ($row["estatus"] == "DISPONIBLE") {
+                        // Cambia el estado directamente al hacer clic en el botón "Apartar"
+                        echo '<a href="menuFisicos.php?id=' . $row["codigo_libro"] . '&apartar=true" class="btn btn-success btnLogin mb-4">Apartar</a>';
+                    }
+                    
                     echo '</div>';
                     echo '</div>';
                 }
