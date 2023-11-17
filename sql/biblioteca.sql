@@ -49,3 +49,14 @@ FOREIGN KEY (folio_rese) REFERENCES reserva(folio_rese),
 FOREIGN KEY (codigo_libro) REFERENCES libro(codigo_libro),
 FOREIGN KEY (matricula) REFERENCES usuario(matricula)
 );
+
+CREATE TABLE prestamos (
+Folio int NOT NULL AUTO_INCREMENT,
+codigo_lib int NOT NULL,
+titulo_lib varchar(45) NOT NULL,
+matricula varchar(45) NOT NULL,
+fecha_prestamo varchar(45) NOT NULL,
+fecha_devolucion varchar(45) DEFAULT NULL,
+estatus_prestamo enum('PRESTADO','DEVUELTO') NOT NULL,
+PRIMARY KEY (Folio)
+)
