@@ -34,7 +34,7 @@
 <body>
 
     <div class="container menuFisicos">
-        <h1>Administrador - Menú Libros Físicos</h1><br>
+        <h1><p class="mlb">Administrador - Menú Libros Físicos</p></h1><br>
 
         <div class="container create mt-2 mb-2">
             <h2>Agregar Libro</h2>
@@ -69,6 +69,7 @@
 
         <div class="container update">
             <h2>Actualizar Libro</h2>
+            <div class="con_upt">
             <form action="update.php" method="post">
                 <label class="form-label">Código del Libro a actualizar: </label><input class="form-control" type="text" name="codigo" required><br>
                 <label class="form-label">Nuevo Título: </label><input class="form-control" type="text" name="titulo" required><br>
