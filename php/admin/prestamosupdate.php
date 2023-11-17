@@ -4,18 +4,16 @@ include '../conexion.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $Folio = $_POST['Folio'];
     $fecha_devolucion = $_POST['fecha_devolucion'];
-    $estatus = $_POST['estatus_prestamo'];
+    // $estatus = $_POST['estatus_prestamo'];
     $codigoQuery = $conn->query("SELECT codigo_lib FROM prestamos WHERE Folio = '$Folio'");
     $row = $codigoQuery->fetch_assoc();
     $codigoLibro = $row['codigo_lib'];
-    $sql = "UPDATE prestamos SET fecha_devolucion='$fecha_devolucion', estatus_prestamo='$estatus'WHERE Folio='$Folio'";
+    $sql = "UPDATE prestamos SET fecha_devolucion='$fecha_devolucion', estatus_prestamo='DEVUELTO'WHERE Folio='$Folio'";
 
     if ($conn->query($sql) === TRUE) {
         if ($conn->affected_rows > 0) {
-            if($estatus==="DEVUELTO"){
-                $sqlUpdateCantidadp = "UPDATE libro SET cantidad = cantidad + 1 WHERE codigo_libro = '$codigoLibro'";
-                $conn->query($sqlUpdateCantidadp);
-            }
+            $sqlUpdateCantidadp = "UPDATE libro SET cantidad = cantidad + 1 WHERE codigo_libro = '$codigoLibro'";
+            $conn->query($sqlUpdateCantidadp);
             echo "<script>alert('Prestamo actualizado correctamente'); window.location.href = 'prestamos.php';</script>";
             exit();
         } else {

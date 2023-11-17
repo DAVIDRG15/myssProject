@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin - Prestamos</title>
+    <title>Admin - Préstamos</title>
     <!-- CSS -->
     <link rel="stylesheet" href="../../assets/css/style.css">
     <!-- Bootstrap -->
@@ -34,22 +34,22 @@
 <body>
 
     <div class="container menuFisicos">
-        <h1>Administrador - Prestamos</h1><br>
+        <h1>Administrador - Préstamos</h1><br>
         <div class="container update">
-            <h2>Actualizar Prestamo</h2>
+            <h2>Actualizar Préstamo</h2>
             <form action="prestamosupdate.php" method="post">
                 <label class="form-label">Folio: </label><input class="form-control" type="text" name="Folio" required><br>
                 <label class="form-label">Fecha de devolución: </label><input class="form-control" type="text" name="fecha_devolucion" required><br>
-                <label class="form-label">Estatus:</label>
-                <select class="form-control" name="estatus_prestamo" required>
+                <!-- <label class="form-label">Estatus:</label> -->
+                <!-- <select class="form-control" name="estatus_prestamo" required>
                     <option value="PRESTADO">Prestado</option>
                     <option value="DEVUELTO">Devuelto</option>
-                </select><br>
+                </select><br> -->
                 <input class="btn btn-success" type="submit" value="Actualizar Prestamo">
             </form>
         </div><br>
         <div class="container read">
-            <h2>Prestamos</h2>
+            <h2>Préstamos</h2>
             <?php include 'prestados.php'; ?>
         </div><br>
     </div>
