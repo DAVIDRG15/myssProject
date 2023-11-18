@@ -75,19 +75,19 @@
                 <form action="update.php" method="post">
                     <label class="form-label">Código del Libro a actualizar: </label><input class="form-control"
                         type="text" name="codigo" required><br>
-                    <label class="form-label">Nuevo Título: </label><input class="form-control" type="text"
+                    <label class="form-label">Título: </label><input class="form-control" type="text"
                         name="titulo" required><br>
-                    <label class="form-label">Nuevo Autor: </label><input class="form-control" type="text" name="autor"
+                    <label class="form-label">Autor: </label><input class="form-control" type="text" name="autor"
                         required><br>
-                    <label class="form-label">Nueva Editorial: </label><input class="form-control" type="text"
+                    <label class="form-label">Editorial: </label><input class="form-control" type="text"
                         name="editorial" required><br>
-                    <label class="form-label">Nueva Categoría: </label><input class="form-control" type="text"
+                    <label class="form-label">Categoría: </label><input class="form-control" type="text"
                         name="categoria" required><br>
-                    <label class="form-label">Nueva Subcategoría: </label><input class="form-control" type="text"
+                    <label class="form-label">Subcategoría: </label><input class="form-control" type="text"
                         name="subcategoria" required><br>
-                    <label class="form-label">Nueva Cantidad: </label><input class="form-control" type="number"
+                    <label class="form-label">Cantidad: </label><input class="form-control" type="number"
                         name="cantidad" required><br>
-                    <label class="form-label">Nuevo Estatus:</label>
+                    <label class="form-label">Estatus:</label>
                     <select class="form-control" name="estatus" required>
                         <option value="PRESTAMO">Prestamo</option>
                         <option value="DISPONIBLE">Disponible</option>
