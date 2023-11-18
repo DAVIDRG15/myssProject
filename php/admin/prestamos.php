@@ -40,11 +40,6 @@
             <form action="prestamosupdate.php" method="post">
                 <label class="form-label">Folio: </label><input class="form-control" type="text" name="Folio" required><br>
                 <label class="form-label">Fecha de devolución: </label><input class="form-control" type="text" name="fecha_devolucion" required><br>
-                <!-- <label class="form-label">Estatus:</label> -->
-                <!-- <select class="form-control" name="estatus_prestamo" required>
-                    <option value="PRESTADO">Prestado</option>
-                    <option value="DEVUELTO">Devuelto</option>
-                </select><br> -->
                 <input class="btn btn-success" type="submit" value="Actualizar Préstamo">
             </form>
         </div><br>
