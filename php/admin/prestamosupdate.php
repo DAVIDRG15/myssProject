@@ -1,14 +1,18 @@
 <?php
 include '../conexion.php';
+session_start();
+$idadminp=$_SESSION["id_admin"];
+$sqlnombrep = "SELECT nombre_admin FROM administrador WHERE id_admin = '$idadminp'";
+$resultnombrep = $conn->query($sqlnombrep);
+$nombrep = ($resultnombrep->num_rows > 0) ? $resultnombrep->fetch_assoc()['nombre_admin'] : '';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $Folio = $_POST['Folio'];
     $fecha_devolucion = $_POST['fecha_devolucion'];
-    // $estatus = $_POST['estatus_prestamo'];
     $codigoQuery = $conn->query("SELECT codigo_lib FROM prestamos WHERE Folio = '$Folio'");
     $row = $codigoQuery->fetch_assoc();
     $codigoLibro = $row['codigo_lib'];
-    $sql = "UPDATE prestamos SET fecha_devolucion='$fecha_devolucion', estatus_prestamo='DEVUELTO'WHERE Folio='$Folio'";
+    $sql = "UPDATE prestamos SET fecha_devolucion='$fecha_devolucion', estatus_prestamo='DEVUELTO', receptor='$nombrep' WHERE Folio='$Folio'";
 
     if ($conn->query($sql) === TRUE) {
         if ($conn->affected_rows > 0) {

@@ -16,6 +16,7 @@ if ($result->num_rows > 0) {
         echo '<p class="card-text">Fecha de prestamo: ' . $row["fecha_prestamo"] . '</p>';
         echo '<p class="card-text">Fecha de devolución: ' . $row["fecha_devolucion"] . '</p>';
         echo '<p class="card-text">Estatus: ' . $row["estatus_prestamo"] . '</p>';
+        echo '<p class="card-text">Recibió el libro: ' . $row["receptor"] . '</p>';
         echo '</div>';
         echo '</div>';
     }
