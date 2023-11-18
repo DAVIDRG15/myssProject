@@ -64,12 +64,31 @@ include 'conexion.php';
                     }
                 }
                 $fechaPrestamo = date("Y-m-d");
-                $sql2 = "INSERT INTO prestamos (codigo_lib, titulo_lib, matricula, fecha_prestamo, estatus_prestamo)
-                VALUES ('$codigoLibro', '$titulo', '$matriculap', '$fechaPrestamo', 'PRESTADO')";
+                $sql2 = "INSERT INTO prestamos (codigo_lib, titulo_lib, matricula, nom_usu, fecha_prestamo, estatus_prestamo)
+                VALUES ('$codigoLibro', '$titulo', '$matriculap', '$nombre', '$fechaPrestamo', 'PRESTADO')";
                 if ($conn->query($sql2) === TRUE) {
                     echo "<script>alert('Libro apartado con éxito'); window.location.href = 'menuFisicos.php';</script>";
                 } else {
                     echo "<script>alert('Error al apartar el libro'); window.location.href = 'menuFisicos.php';</script>" . $conn->error . '</div>';
+                }
+                header("Location: menuFisicos.php");
+                exit();
+            }
+            if (isset($_GET['reservar']) && $_GET['reservar'] == 'true') {
+                $codigoLibroR = $_GET['id2'];
+                $sqltituloR = "SELECT titulo_lib FROM libro WHERE codigo_libro = '$codigoLibroR'";
+                $resultTituloR = $conn->query($sqltituloR);
+                $tituloR = ($resultTituloR->num_rows > 0) ? $resultTituloR->fetch_assoc()['titulo_lib'] : '';
+                $sqlnombreR = "SELECT nombre_usu FROM usuario WHERE matricula = '$matriculap'";
+                $resultNombreR = $conn->query($sqlnombreR);
+                $nombreR = ($resultNombreR->num_rows > 0) ? $resultNombreR->fetch_assoc()['nombre_usu'] : '';
+                $fechaReserva = date("Y-m-d");
+                $sql3 = "INSERT INTO reserva (codigo_lr, titulo_lr, matricular, nombrer, fecha_rese)
+                VALUES ('$codigoLibroR', '$tituloR', '$matriculap', '$nombreR', '$fechaReserva')";
+                if ($conn->query($sql3) === TRUE) {
+                    echo "<script>alert('Libro apartado con éxito'); window.location.href = 'menuFisicos.php';</script>";
+                } else {
+                    echo "<script>alert('Error al reservar el libro'); window.location.href = 'menuFisicos.php';</script>" . $conn->error . '</div>';
                 }
                 header("Location: menuFisicos.php");
                 exit();
@@ -90,10 +109,11 @@ include 'conexion.php';
                     echo '<p class="card-text">Cantidad: ' . $row["cantidad"] . '</p>';
                     echo '<p class="card-text">Estatus: ' . $row["estatus"] . '</p>';
                     if ($row["estatus"] == "DISPONIBLE") {
-                        // Cambia el estado directamente al hacer clic en el botón "Apartar"
                         echo '<a href="menuFisicos.php?id=' . $row["codigo_libro"] . '&apartar=true" class="btn btn-success btnLogin mb-4">Apartar</a>';
                     }
-                    
+                    if ($row["estatus"] == "PRESTAMO") {
+                        echo '<a href="menuFisicos.php?id2=' . $row["codigo_libro"] . '&reservar=true" class="btn btn-success btnLogin mb-4">Reservar</a>';
+                    }
                     echo '</div>';
                     echo '</div>';
                 }

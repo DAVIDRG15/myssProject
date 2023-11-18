@@ -108,6 +108,9 @@
             <a href="prestamos.php">
                 <button class="btn btn-success btnLogin mb-4">Préstamos</button>
             </a>
+            <a href="reservas.php">
+                <button class="btn btn-success btnLogin mb-4">Reservas</button>
+            </a>
         </div>
     </div>
 

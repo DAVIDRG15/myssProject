@@ -12,6 +12,7 @@ if ($result->num_rows > 0) {
         echo '<p class="card-text">Código: ' . $row["codigo_lib"] . '</p>';
         echo '<p class="card-text">Título: ' . $row["titulo_lib"] . '</p>';
         echo '<p class="card-text">Matrícula: ' . $row["matricula"] . '</p>';
+        echo '<p class="card-text">Alumno: ' . $row["nom_usu"] . '</p>';
         echo '<p class="card-text">Fecha de prestamo: ' . $row["fecha_prestamo"] . '</p>';
         echo '<p class="card-text">Fecha de devolución: ' . $row["fecha_devolucion"] . '</p>';
         echo '<p class="card-text">Estatus: ' . $row["estatus_prestamo"] . '</p>';
