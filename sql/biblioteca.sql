@@ -36,20 +36,6 @@ FOREIGN KEY (codigo_libro) REFERENCES libro(codigo_libro),
 FOREIGN KEY (matricula) REFERENCES usuario(matricula) 
 );
 
-CREATE TABLE prestamo (
-folio_rese int auto_increment,
-codigo_libro int (10) not null,
-titulo_lib varchar (50) not null,
-matricula int (8) not null,
-nombre varchar (25) not null,
-fecha_prestamo date, 
-fecha_devolucion date,
-estatus_prestamo ENUM('PRESTADO', 'DEVUELTO') NOT NULL,
-FOREIGN KEY (folio_rese) REFERENCES reserva(folio_rese),
-FOREIGN KEY (codigo_libro) REFERENCES libro(codigo_libro),
-FOREIGN KEY (matricula) REFERENCES usuario(matricula)
-);
-
 CREATE TABLE prestamos (
 Folio int NOT NULL AUTO_INCREMENT,
 codigo_lib int NOT NULL,
