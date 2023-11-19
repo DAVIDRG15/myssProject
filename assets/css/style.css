@@ -5,12 +5,12 @@ body {
 nav,
 footer {
     background-color: rgb(0, 97, 53);
-    height: 95px;
+    height: 110px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .title {
-    font-size: 56px;
+    font-size: 60px;
     font-weight: bold;
     text-transform: uppercase;
     animation: float 4s ease-in-out infinite;
@@ -18,7 +18,7 @@ footer {
 }
 
 button.btnIndex {
-    font-size: 32px;
+    font-size: 40px;
     background-color: rgb(0, 97, 53);
     color: #f4f2ed;
 }
@@ -38,8 +38,8 @@ a {
 }
 
 .book {
-    width: 250px;
-    height: 350px;
+    width: 260px;
+    height: 360px;
     transform-style: preserve-3d;
     transition: transform 1s;
 }

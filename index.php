@@ -23,14 +23,15 @@
 <body>
     <div class="container mt-5 mb-5 text-center">
         <p class="title">Simulación de Biblioteca</p>
-        <br>
+        <br><br>
         <div class="book-container">
             <img src="assets/img/libro.png" alt="Libros" class="img-fluid book">
         </div>
-        <br><br>
+        <br><br><br>
         <a href="php/loginUser.php">
             <button class="btn btn-success btnIndex">INICIA SESIÓN</button>
         </a>
+        <br><br><br>
     </div>
 </body>
 
