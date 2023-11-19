@@ -24,17 +24,14 @@ Este proyecto en PHP simula una biblioteca virtual que permite a los usuarios co
 - Préstamo de libros físicos.
 - Reserva de libros físicos.
 
-
 ## Estructura del Proyecto
 
 La estructura del proyecto es la siguiente:
 
-/
-|-- assets/
-|-- php/
-|-- sql/
-|-- index.php
-/
+- assets/
+- php/
+- sql/
+- index.php
 
 ## Tecnologías Utilizadas
 
