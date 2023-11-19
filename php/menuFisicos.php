@@ -86,7 +86,7 @@ $matriculap = $_SESSION["matricula"];
                 $sql3 = "INSERT INTO reserva (codigo_lr, titulo_lr, matricular, nombrer, fecha_rese)
                 VALUES ('$codigoLibroR', '$tituloR', '$matriculap', '$nombreR', '$fechaReserva')";
                 if ($conn->query($sql3) === TRUE) {
-                    echo "<script>alert('Libro apartado con éxito'); window.location.href = 'menuFisicos.php';</script>";
+                    echo "<script>alert('Libro reservado con éxito'); window.location.href = 'menuFisicos.php';</script>";
                 } else {
                     echo "<script>alert('Error al reservar el libro'); window.location.href = 'menuFisicos.php';</script>" . $conn->error . '</div>';
                 }
