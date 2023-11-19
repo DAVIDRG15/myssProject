@@ -38,8 +38,10 @@
         <div class="container update">
             <h2>Actualizar Préstamo</h2>
             <form action="prestamosupdate.php" method="post">
-                <label class="form-label">Folio: </label><input class="form-control" type="text" name="Folio" required><br>
-                <label class="form-label">Fecha de devolución: </label><input class="form-control" type="text" name="fecha_devolucion" required><br>
+                <label class="form-label">Folio: </label><input class="form-control" type="text" name="Folio"
+                    required><br>
+                <label class="form-label">Fecha de devolución: </label><input class="form-control" type="text"
+                    name="fecha_devolucion" required><br>
                 <input class="btn btn-success" type="submit" value="Actualizar Préstamo">
             </form>
         </div><br>

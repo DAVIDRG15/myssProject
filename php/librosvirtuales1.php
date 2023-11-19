@@ -13,8 +13,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+    </script>
 </head>
 
 <nav>
@@ -108,7 +108,8 @@
         <div class="estanteria">
             <h2>Estantería 3: Cálculo</h2>
             <div class="libro" onclick="abrirPDF('ElementosCalculo.pdf')">
-                <img style="filter: brightness(85%);" src="../assets/img/ElementosCalculo.JPG" alt="Elementos de Cálculo Diferencial">
+                <img style="filter: brightness(85%);" src="../assets/img/ElementosCalculo.JPG"
+                    alt="Elementos de Cálculo Diferencial">
                 <h3 class="titulo-libro">Elementos de Cálculo Diferencial<br>&nbsp;</h3>
                 <div class="libro-info">
                     <h4>Elementos de Cálculo Diferencial lineal</h4>
@@ -118,7 +119,8 @@
                 </div>
             </div>
             <div class="libro" onclick="abrirPDF('Calculo2.pdf')">
-                <img style="filter: brightness(85%);" src="../assets/img/Calculo2.jpg" alt="Geometría analítica y cálculo 2">
+                <img style="filter: brightness(85%);" src="../assets/img/Calculo2.jpg"
+                    alt="Geometría analítica y cálculo 2">
                 <h3 class="titulo-libro">Geometría analítica y cálculo 2</h3>
                 <div class="libro-info">
                     <h4>Geometría analítica y cálculo 2</h4>
@@ -128,7 +130,8 @@
                 </div>
             </div>
             <div class="libro" onclick="abrirPDF('CalculoApp.pdf')">
-                <img style="filter: brightness(85%);" src="../assets/img/CalculoApp.jpg" alt="Cálculo diferencial e integral, con aplicaciones">
+                <img style="filter: brightness(85%);" src="../assets/img/CalculoApp.jpg"
+                    alt="Cálculo diferencial e integral, con aplicaciones">
                 <h3 class="titulo-libro">Cálculo diferencial e integral<br>&nbsp;</h3>
                 <div class="libro-info">
                     <h4>Cálculo diferencial e integral, con aplicaciones</h4>
@@ -161,7 +164,8 @@
                 </div>
             </div>
             <div class="libro" onclick="abrirPDF('IntroJava.pdf')">
-                <img style="filter: brightness(85%);" src="../assets/img/IntroJava.JPG" alt="Introduccion a la Programacion con Java">
+                <img style="filter: brightness(85%);" src="../assets/img/IntroJava.JPG"
+                    alt="Introduccion a la Programacion con Java">
                 <h3 class="titulo-libro">Introduccion a la Programacion con Java</h3>
                 <div class="libro-info">
                     <h4>Introduccion a la Programacion con Java</h4>

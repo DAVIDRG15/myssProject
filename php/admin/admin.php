@@ -89,8 +89,8 @@ $nombrep = ($resultnombrep->num_rows > 0) ? $resultnombrep->fetch_assoc()['nombr
                 <form action="update.php" method="post">
                     <label class="form-label">Código del Libro a actualizar: </label><input class="form-control"
                         type="text" name="codigo" required><br>
-                    <label class="form-label">Título: </label><input class="form-control" type="text"
-                        name="titulo" required><br>
+                    <label class="form-label">Título: </label><input class="form-control" type="text" name="titulo"
+                        required><br>
                     <label class="form-label">Autor: </label><input class="form-control" type="text" name="autor"
                         required><br>
                     <label class="form-label">Editorial: </label><input class="form-control" type="text"

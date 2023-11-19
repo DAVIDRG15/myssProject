@@ -13,8 +13,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+    </script>
 </head>
 
 <nav>
@@ -42,7 +42,8 @@
         <div class="estanteria">
             <h2>Estantería 5: Python</h2>
             <div class="libro" onclick="abrirPDF('IntroPy.pdf')">
-                <img style="filter: brightness(85%);" src="../assets/img/IntroPy.jpg" alt="Introducción a la programación con Python 3">
+                <img style="filter: brightness(85%);" src="../assets/img/IntroPy.jpg"
+                    alt="Introducción a la programación con Python 3">
                 <h3 class="titulo-libro">Introducción a la programación con Python 3</h3>
                 <div class="libro-info">
                     <h4>Introducción a la programación con Python 3</h4>
@@ -62,7 +63,8 @@
                 </div>
             </div>
             <div class="libro" onclick="abrirPDF('AlgoPy.pdf')">
-                <img style="filter: brightness(85%);" src="../assets/img/AlgoPy.jpg" alt="Algoritmos y estructuras de datos en Python">
+                <img style="filter: brightness(85%);" src="../assets/img/AlgoPy.jpg"
+                    alt="Algoritmos y estructuras de datos en Python">
                 <h3 class="titulo-libro">Algoritmos y estructuras de datos en Python</h3>
                 <div class="libro-info">
                     <h4>Algoritmos y estructuras de datos en Python</h4>
@@ -108,7 +110,8 @@
         <div class="estanteria">
             <h2>Estantería 7: Sitios web</h2>
             <div class="libro" onclick="abrirPDF('DesAW.pdf')">
-                <img style="filter: brightness(85%);" src="../assets/img/DesAW.jpg" alt="Desarrollo de aplicaciones web">
+                <img style="filter: brightness(85%);" src="../assets/img/DesAW.jpg"
+                    alt="Desarrollo de aplicaciones web">
                 <h3 class="titulo-libro">Desarrollo de aplicaciones web<br>&nbsp;</h3>
                 <div class="libro-info">
                     <h4>Desarrollo de aplicaciones web</h4>
@@ -118,7 +121,8 @@
                 </div>
             </div>
             <div class="libro" onclick="abrirPDF('HTML.pdf')">
-                <img style="filter: brightness(85%);" src="../assets/img/HTML.jpg" alt="El gran libro de HTML5, CSS3 y JavaScript">
+                <img style="filter: brightness(85%);" src="../assets/img/HTML.jpg"
+                    alt="El gran libro de HTML5, CSS3 y JavaScript">
                 <h3 class="titulo-libro">El gran libro de HTML5, CSS3 y JavaScript</h3>
                 <div class="libro-info">
                     <h4>El gran libro de HTML5, CSS3 y JavaScript</h4>
@@ -128,7 +132,8 @@
                 </div>
             </div>
             <div class="libro" onclick="abrirPDF('DyDW.pdf')">
-                <img style="filter: brightness(85%);" src="../assets/img/DyDW.jpg" alt="Diseño y desarrollo web. Análisis de casos">
+                <img style="filter: brightness(85%);" src="../assets/img/DyDW.jpg"
+                    alt="Diseño y desarrollo web. Análisis de casos">
                 <h3 class="titulo-libro">Diseño y desarrollo web. Análisis de casos</h3>
                 <div class="libro-info">
                     <h4>Diseño y desarrollo web. Análisis de casos</h4>
@@ -145,7 +150,7 @@
                 <h3 class="titulo-libro">El lenguaje de programación C<br>&nbsp;</h3>
                 <div class="libro-info">
                     <h4>El lenguaje de programación C</h4>
-                    <p>Autor:  Brian Kernighan, Dennis Ritchie</p>
+                    <p>Autor: Brian Kernighan, Dennis Ritchie</p>
                     <p>Categoría: Lenguaje C</p>
                     <p>Código: 022</p>
                 </div>
@@ -161,7 +166,8 @@
                 </div>
             </div>
             <div class="libro" onclick="abrirPDF('C.pdf')">
-                <img style="filter: brightness(85%);" src="../assets/img/C.jpg" alt="Fundamentos de programación. Piensa en C">
+                <img style="filter: brightness(85%);" src="../assets/img/C.jpg"
+                    alt="Fundamentos de programación. Piensa en C">
                 <h3 class="titulo-libro">Fundamentos de programación. Piensa en C</h3>
                 <div class="libro-info">
                     <h4>Fundamentos de programación. Piensa en C</h4>
