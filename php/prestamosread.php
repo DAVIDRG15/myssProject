@@ -1,6 +1,5 @@
 <?php
 include 'conexion.php';
-session_start();
 $matriculap = $_SESSION["matricula"];
 $sql = "SELECT * FROM prestamos WHERE matricula=$matriculap";
 $result = $conn->query($sql);
