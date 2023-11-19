@@ -33,6 +33,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "<script>alert('El estatus del préstamo no es \"DEVUELTO\". No se puede actualizar la fecha de devolución.'); window.location.href = 'prestamos.php';</script>";
     }
 }
-
 $conn->close();
 ?>

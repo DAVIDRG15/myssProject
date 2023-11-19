@@ -12,20 +12,29 @@ if (isset($_GET['actualizarp']) && $_GET['actualizarp'] == 'true') {
     $codigoQuery = $conn->query("SELECT codigo_lib FROM prestamos WHERE Folio = '$Foliop'");
     $row = $codigoQuery->fetch_assoc();
     $codigoLibro = $row['codigo_lib'];
+    $fecha_prestamo = date("Y-m-d");
     $sql = "UPDATE prestamos SET fecha_devolucion='$fecha_devolucion', estatus_prestamo='DEVUELTO', receptor='$nombrep' WHERE Folio='$Foliop'";
     if ($conn->query($sql) === TRUE) {
-        if ($conn->affected_rows > 0) {
-            $sqlUpdateCantidadp = "UPDATE libro SET cantidad = cantidad + 1 WHERE codigo_libro = '$codigoLibro'";
-            $conn->query($sqlUpdateCantidadp);
-            echo "<script>alert('Prestamo actualizado correctamente'); window.location.href = 'prestamos.php';</script>";
-            exit();
+        $reservaQuery = $conn->query("SELECT * FROM reserva WHERE codigo_lr = '$codigoLibro' ORDER BY folio_rese ASC LIMIT 1");
+        if ($reservaQuery->num_rows > 0) {
+            $reserva = $reservaQuery->fetch_assoc();
+            $sqlInsertPrestamo = "INSERT INTO prestamos (codigo_lib, titulo_lib, matricula, nom_usu, fecha_prestamo, estatus_prestamo)
+                                  VALUES ('{$reserva['codigo_lr']}', '{$reserva['titulo_lr']}', '{$reserva['matricular']}', '{$reserva['nombrer']}', '$fecha_prestamo','PRESTADO')";
+            $conn->query($sqlInsertPrestamo);
+            $codigoReserva = $reserva['folio_rese'];
+            $conn->query("DELETE FROM reserva WHERE folio_rese = '$codigoReserva'");
         } else {
-            echo "<script>alert('No se encontró un prestamo con el folio \"$Foliop\" para actualizar.'); window.location.href = 'prestamos.php';</script>";
+            $conn->query("UPDATE libro SET cantidad = cantidad + 1 WHERE codigo_libro = '$codigoLibro'");
+            $conn->query("UPDATE libro SET estatus = 'DISPONIBLE' WHERE codigo_libro = '$codigoLibro'");
         }
+        $sqlUpdatePrestamo = "UPDATE prestamos SET fecha_devolucion = '$fecha_devolucion', estatus_prestamo = 'DEVUELTO', receptor = '$nombrep' WHERE Folio = '$Foliop'";
+        $conn->query($sqlUpdatePrestamo);
+        echo "<script>alert('Prestamo actualizado correctamente'); window.location.href = 'prestamos.php';</script>";
+        exit();
     } else {
-        echo "Error al actualizar prestamo: " . $conn->error;
+        echo "<script>alert('El estatus del préstamo no es \"DEVUELTO\". No se puede actualizar la fecha de devolución.'); window.location.href = 'prestamos.php';</script>";
     }
-}
+    }
 $sql = "SELECT * FROM prestamos";
 $result = $conn->query($sql);
 
