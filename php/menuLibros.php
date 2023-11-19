@@ -1,3 +1,11 @@
+<?php
+include 'conexion.php';
+session_start();
+$matriculap = $_SESSION["matricula"];
+$sqlnombrep = "SELECT nombre_usu FROM usuario WHERE matricula = '$matriculap'";
+$resultnombrep = $conn->query($sqlnombrep);
+$nombrep = ($resultnombrep->num_rows > 0) ? $resultnombrep->fetch_assoc()['nombre_usu'] : '';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,7 +29,13 @@
     <div class="container">
         <br>
         <div class="d-flex justify-content-between">
-            <div></div>
+            <div class="ml-auto">
+                <a href="cuenta.php">
+                    <button class="btn btn-warning">
+                    <?php echo $nombrep; ?>
+                    </button>
+                </a>
+            </div>
             <div class="ml-auto">
                 <a href="../index.php">
                     <button class="btn btn-danger">

@@ -1,5 +1,7 @@
 <?php
 include 'conexion.php';
+session_start();
+$matriculap = $_SESSION["matricula"];
 ?>
 
 
@@ -40,8 +42,6 @@ include 'conexion.php';
 
         <div class="container read mt-2 mb-4">
             <?php 
-            session_start();
-            $matriculap = $_SESSION["matricula"];
             if (isset($_GET['apartar']) && $_GET['apartar'] == 'true') {
                 $codigoLibro = $_GET['id'];
                 $sqlCantidad = "SELECT cantidad FROM libro WHERE codigo_libro = '$codigoLibro'";

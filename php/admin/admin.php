@@ -1,3 +1,11 @@
+<?php
+include '../conexion.php';
+session_start();
+$idadminp = isset($_SESSION["id_admin"]) ? $_SESSION["id_admin"] : null;
+$sqlnombrep = "SELECT nombre_admin FROM administrador WHERE id_admin = '$idadminp'";
+$resultnombrep = $conn->query($sqlnombrep);
+$nombrep = ($resultnombrep->num_rows > 0) ? $resultnombrep->fetch_assoc()['nombre_admin'] : '';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,7 +27,13 @@
     <div class="container">
         <br>
         <div class="d-flex justify-content-between">
-            <div></div>
+            <div class="ml-auto">
+                <a href="registro.php">
+                    <button class="btn btn-warning">
+                        <?php echo $nombrep; ?>
+                    </button>
+                </a>
+            </div>
             <div class="ml-auto">
                 <a href="../../index.php">
                     <button class="btn btn-danger">
