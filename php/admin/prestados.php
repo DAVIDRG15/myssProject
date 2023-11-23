@@ -1,6 +1,5 @@
 <?php
 include '../conexion.php';
-session_start();
 $idadminp=$_SESSION["id_admin"];
 $sqlnombrep = "SELECT nombre_admin FROM administrador WHERE id_admin = '$idadminp'";
 $resultnombrep = $conn->query($sqlnombrep);
