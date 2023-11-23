@@ -125,6 +125,9 @@ $nombrep = ($resultnombrep->num_rows > 0) ? $resultnombrep->fetch_assoc()['nombr
             <a href="reservas.php">
                 <button class="btn btn-success btnLogin mb-4">Reservas</button>
             </a>
+            <a href="multas.php">
+                <button class="btn btn-success btnLogin mb-4">Multas</button>
+            </a>
         </div>
     </div>
 

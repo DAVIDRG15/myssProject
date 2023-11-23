@@ -23,19 +23,22 @@ if (isset($_GET['norecogido']) && $_GET['norecogido'] == 'true') {//no recogido
     $fecha_devolucion="No recogió";
     $fecha_recoge="No recogió";
     $codigoQuery = $conn->query("SELECT codigo_lib FROM prestamos WHERE Folio = '$Foliop'");
-    $row = $codigoQuery->fetch_assoc();
+    $row = $codigoQuery->fetch_assoc(); 
     $codigoLibro = $row['codigo_lib'];
     $fecha_prestamo = date("Y-m-d");
     $fechaActual = new DateTime();
-    $fechaActual->add(new DateInterval('P7D'));
+    $fechaActual->add(new DateInterval('P1D'));
     $fechalimite = $fechaActual->format('Y-m-d');
+    $fechaActual = new DateTime();
+    $fechaActual->add(new DateInterval('P2D'));
+    $fechadebeentregar = $fechaActual->format('Y-m-d');
     $sql = "UPDATE prestamos SET fecha_recoge='$fecha_recoge', fecha_devolucion='$fecha_devolucion', estatus_prestamo='NO RECOGIDO', receptor='$nombrep' WHERE Folio='$Foliop'";
     if ($conn->query($sql) === TRUE) {
         $reservaQuery = $conn->query("SELECT * FROM reserva WHERE codigo_lr = '$codigoLibro' ORDER BY folio_rese ASC LIMIT 1");
         if ($reservaQuery->num_rows > 0) {
             $reserva = $reservaQuery->fetch_assoc();
-            $sqlInsertPrestamo = "INSERT INTO prestamos (codigo_lib, titulo_lib, matricula, nom_usu, fecha_prestamo, fecha_limite ,estatus_prestamo)
-                                  VALUES ('{$reserva['codigo_lr']}', '{$reserva['titulo_lr']}', '{$reserva['matricular']}', '{$reserva['nombrer']}', '$fecha_prestamo','$fechalimite','PRESTADO')";
+            $sqlInsertPrestamo = "INSERT INTO prestamos (codigo_lib, titulo_lib, matricula, nom_usu, fecha_prestamo, fecha_limite ,fecha_debeentregar,estatus_prestamo)
+                                  VALUES ('{$reserva['codigo_lr']}', '{$reserva['titulo_lr']}', '{$reserva['matricular']}', '{$reserva['nombrer']}', '$fecha_prestamo','$fechalimite','$fechadebeentregar','PRESTADO')";
             $conn->query($sqlInsertPrestamo);
             $codigoReserva = $reserva['folio_rese'];
             $conn->query("DELETE FROM reserva WHERE folio_rese = '$codigoReserva'");
@@ -46,6 +49,7 @@ if (isset($_GET['norecogido']) && $_GET['norecogido'] == 'true') {//no recogido
         $sqlUpdatePrestamo = "UPDATE prestamos SET fecha_recoge='$fecha_recoge', fecha_devolucion = '$fecha_devolucion', estatus_prestamo = 'NO RECOGIDO', receptor = '$nombrep' WHERE Folio = '$Foliop'";
         $conn->query($sqlUpdatePrestamo);
         echo "<script>alert('Prestamo actualizado correctamente'); window.location.href = 'prestamos.php';</script>";
+        
         exit();
     } else {
         echo "<script>alert('El estatus del préstamo no es \"RECOGIDO O NO RECODIGO\". No se puede actualizar la fecha de devolución.'); window.location.href = 'prestamos.php';</script>";
@@ -59,15 +63,18 @@ if (isset($_GET['devuelto']) && $_GET['devuelto'] == 'true') {//devuelto
     $codigoLibro = $row['codigo_lib'];
     $fecha_prestamo = date("Y-m-d");
     $fechaActual = new DateTime();
-    $fechaActual->add(new DateInterval('P7D'));
+    $fechaActual->add(new DateInterval('P1D'));
     $fechalimite = $fechaActual->format('Y-m-d');
+    $fechaActual = new DateTime();
+    $fechaActual->add(new DateInterval('P2D'));
+    $fechadebeentregar = $fechaActual->format('Y-m-d');
     $sql = "UPDATE prestamos SET fecha_devolucion='$fecha_devolucion', estatus_prestamo='DEVUELTO', receptor='$nombrep' WHERE Folio='$Foliop'";
     if ($conn->query($sql) === TRUE) {
         $reservaQuery = $conn->query("SELECT * FROM reserva WHERE codigo_lr = '$codigoLibro' ORDER BY folio_rese ASC LIMIT 1");
         if ($reservaQuery->num_rows > 0) {
             $reserva = $reservaQuery->fetch_assoc();
-            $sqlInsertPrestamo = "INSERT INTO prestamos (codigo_lib, titulo_lib, matricula, nom_usu, fecha_prestamo, fecha_limite, estatus_prestamo)
-                                  VALUES ('{$reserva['codigo_lr']}', '{$reserva['titulo_lr']}', '{$reserva['matricular']}', '{$reserva['nombrer']}', '$fecha_prestamo', '$fechalimite','PRESTADO')";
+            $sqlInsertPrestamo = "INSERT INTO prestamos (codigo_lib, titulo_lib, matricula, nom_usu, fecha_prestamo, fecha_limite, fecha_debeentregar,estatus_prestamo)
+                                  VALUES ('{$reserva['codigo_lr']}', '{$reserva['titulo_lr']}', '{$reserva['matricular']}', '{$reserva['nombrer']}', '$fecha_prestamo', '$fechalimite','$fechadebeentregar','PRESTADO')";
             $conn->query($sqlInsertPrestamo);
             $codigoReserva = $reserva['folio_rese'];
             $conn->query("DELETE FROM reserva WHERE folio_rese = '$codigoReserva'");
@@ -89,17 +96,23 @@ if (isset($_GET['maledo']) && $_GET['maledo'] == 'true') {//devuelto en mal esta
     $codigoQuery = $conn->query("SELECT codigo_lib FROM prestamos WHERE Folio = '$Foliop'");
     $row = $codigoQuery->fetch_assoc();
     $codigoLibro = $row['codigo_lib'];
+    $matriculaQuery = $conn->query("SELECT matricula FROM prestamos WHERE Folio = '$Foliop'");
+    $row = $matriculaQuery->fetch_assoc();
+    $matriculam = $row['matricula'];
     $fecha_prestamo = date("Y-m-d");
     $fechaActual = new DateTime();
-    $fechaActual->add(new DateInterval('P7D'));
+    $fechaActual->add(new DateInterval('P1D'));
     $fechalimite = $fechaActual->format('Y-m-d');
+    $fechaActual = new DateTime();
+    $fechaActual->add(new DateInterval('P2D'));
+    $fechadebeentregar = $fechaActual->format('Y-m-d');
     $sql = "UPDATE prestamos SET fecha_devolucion='$fecha_devolucion', estatus_prestamo='DEVUELTO EN MAL ESTADO', receptor='$nombrep' WHERE Folio='$Foliop'";
     if ($conn->query($sql) === TRUE) {
         $reservaQuery = $conn->query("SELECT * FROM reserva WHERE codigo_lr = '$codigoLibro' ORDER BY folio_rese ASC LIMIT 1");
         if ($reservaQuery->num_rows > 0) {
             $reserva = $reservaQuery->fetch_assoc();
-            $sqlInsertPrestamo = "INSERT INTO prestamos (codigo_lib, titulo_lib, matricula, nom_usu, fecha_prestamo, fecha_limite ,estatus_prestamo)
-                                  VALUES ('{$reserva['codigo_lr']}', '{$reserva['titulo_lr']}', '{$reserva['matricular']}', '{$reserva['nombrer']}', '$fecha_prestamo','$fechalimite','PRESTADO')";
+            $sqlInsertPrestamo = "INSERT INTO prestamos (codigo_lib, titulo_lib, matricula, nom_usu, fecha_prestamo, fecha_limite ,fecha_debeentregar,estatus_prestamo)
+                                  VALUES ('{$reserva['codigo_lr']}', '{$reserva['titulo_lr']}', '{$reserva['matricular']}', '{$reserva['nombrer']}', '$fecha_prestamo','$fechalimite', '$fechadebeentregar','PRESTADO')";
             $conn->query($sqlInsertPrestamo);
             $codigoReserva = $reserva['folio_rese'];
             $conn->query("DELETE FROM reserva WHERE folio_rese = '$codigoReserva'");
@@ -108,6 +121,8 @@ if (isset($_GET['maledo']) && $_GET['maledo'] == 'true') {//devuelto en mal esta
             $conn->query("UPDATE libro SET estatus = 'DISPONIBLE' WHERE codigo_libro = '$codigoLibro'");
         }
         $sqlUpdatePrestamo = "UPDATE prestamos SET fecha_devolucion = '$fecha_devolucion', estatus_prestamo = 'DEVUELTO EN MAL ESTADO', receptor = '$nombrep' WHERE Folio = '$Foliop'";
+        $conn->query($sqlUpdatePrestamo);
+        $sqlUpdatePrestamo = "UPDATE multa SET deuda = deuda + 1000  WHERE matricula = '$matriculam'";
         $conn->query($sqlUpdatePrestamo);
         echo "<script>alert('Prestamo actualizado correctamente'); window.location.href = 'prestamos.php';</script>";
         exit();
@@ -147,6 +162,6 @@ if ($result->num_rows > 0) {
 } else {
     echo "0 resultados";
 }
-//Aún no terminan los cambios, falta lo del correo y lo de las sanciones
+
 $conn->close();
 ?>

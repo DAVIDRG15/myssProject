@@ -53,6 +53,8 @@
                 <input class="form-control" type="text" name="matricula" required><br>
                 <label class="form-label">Nombre:</label>
                 <input class="form-control" type="text" name="nombre" required><br>
+                <label class="form-label">Correo:</label>
+                <input class="form-control" type="text" name="correo" required><br>
                 <label class="form-label">Contraseña:</label>
                 <input class="form-control" type="text" name="contraseña" required><br>
                 <input class="btn btn-success" type="submit" value="Agregar Usuario">

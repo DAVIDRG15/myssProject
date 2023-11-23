@@ -62,11 +62,12 @@ $matriculap = $_SESSION["matricula"];
                     }
                 }
                 $fechaPrestamo = date("Y-m-d");
+                $fechalimite = date("Y-m-d");
                 $fechaActual = new DateTime();
-                $fechaActual->add(new DateInterval('P7D'));
-                $fechalimite = $fechaActual->format('Y-m-d');
-                $sql2 = "INSERT INTO prestamos (codigo_lib, titulo_lib, matricula, nom_usu, fecha_prestamo, fecha_limite, estatus_prestamo)
-                VALUES ('$codigoLibro', '$titulo', '$matriculap', '$nombre', '$fechaPrestamo', '$fechalimite','PRESTADO')";
+                $fechaActual->add(new DateInterval('P2D'));
+                $fechadebeentregar = $fechaActual->format('Y-m-d');
+                $sql2 = "INSERT INTO prestamos (codigo_lib, titulo_lib, matricula, nom_usu, fecha_prestamo, fecha_limite, fecha_debeentregar, estatus_prestamo)
+                VALUES ('$codigoLibro', '$titulo', '$matriculap', '$nombre', '$fechaPrestamo', '$fechalimite', '$fechadebeentregar','PRESTADO')";
                 if ($conn->query($sql2) === TRUE) {
                     echo "<script>alert('Libro apartado con éxito'); window.location.href = 'menuFisicos.php';</script>";
                 } else {
