@@ -7,8 +7,8 @@
     <title>Página 2</title>
     <!-- CSS -->
     <link rel="stylesheet" href="../assets/css/style.css">
-    <!-- JavaScript -->
-    <script src="../assets/js/script.js"></script>
+    <!--icono-->
+    <script src="https://kit.fontawesome.com/41690c9fd1.js" crossorigin="anonymous"></script>
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -26,6 +26,9 @@
                     VOLVER
                 </button>
             </a>
+            <div id="ctn-icon-search">
+            <i class="fa-solid fa-magnifying-glass fa-xl" id="icon" style="color: #dddd00;"></i>
+            </div>
             <a href="librosvirtuales1.php">
                 <button class="btn btn-warning">
                     PÁGINA 1
@@ -36,6 +39,39 @@
 </nav>
 
 <body>
+    <div id="ctn-bars-search">
+        <input type="text" id="inputSearch" placeholder="Busca por título">
+    </div>
+
+    <ul id="box-search">
+        <li><a href="librosvirutales1.php">Física 1</a></li>
+        <li><a href="librosvirutales1.php">Física 2</a></li>
+        <li><a href="librosvirutales1.php">Química 1</a></li>
+        <li><a href="librosvirtuales1.php">Análisis y diseño de sistemas</a></li>
+        <li><a href="librosvirtuales1.php">Sistemas y organizaciones</a></li>
+        <li><a href="librosvirtuales1.php">Analisis de sistemas, diseños y metodos</a></li>
+        <li><a href="librosvirutales1.php">Geometría analítica y calculo 2</a></li>
+        <li><a href="librosvirtuales1.php">Elementos de Cálculo Diferencial</a></li>
+        <li><a href="librosvirutales1.php">Cálculo diferencial e integral</a></li>
+        <li><a href="librosvirtuales1.php">Cómo programar en Java</a></li>
+        <li><a href="librosvirutales1.php">Java 2</a></li>
+        <li><a href="librosvirutales1.php">Introduccion a la programación con Java</a></li>
+        <li><a href="librosvirtuales2.php">Introducción a la programación con Python 3</a></li>
+        <li><a href="librosvirtuales2.php">Python para todos</a></li>
+        <li><a href="librosvirtuales2.php">Algoritmos y estructuras de datos en Python</a></li>
+        <li><a href="librosvirtuales2.php">Bases de datos</a></li>
+        <li><a href="librosvirtuales2.php">Bases de datos 1</a></li>
+        <li><a href="librosvirtuales2.php">Gestion de bases de datos</a></li>
+        <li><a href="librosvirtuales2.php">Desarrollo de aplicaciones web</a></li>
+        <li><a href="librosvirtuales2.php">El gran libro de HMTL, CSS3 y JavaScript</a></li>
+        <li><a href="librosvirtuales2.php">Diseño y desarrollo web, Análisis de casos</a></li>
+        <li><a href="librosvirtuales2.php">El lengujae de programación C</a></li>
+        <li><a href="librosvirtuales2.php">Caminando junto al lenguaje C</a></li>
+        <li><a href="librosvirtuales2.php">Fundamentos de programación. Piensa en C</a></li>
+    </ul>
+
+    <div id="cover"></div>
+    
     <div class="container mt-4 mb-4 text-center">
         <p class="title">LIBROS VIRTUALES</p>
         <br>
@@ -178,6 +214,8 @@
             </div>
         </div>
     </div>
+    <!-- JavaScript -->
+    <script src="../assets/js/script.js"></script>
 </body>
 
 <footer></footer>
