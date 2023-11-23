@@ -3,8 +3,6 @@ include 'conexion.php';
 session_start();
 $matriculap = $_SESSION["matricula"];
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -64,8 +62,11 @@ $matriculap = $_SESSION["matricula"];
                     }
                 }
                 $fechaPrestamo = date("Y-m-d");
-                $sql2 = "INSERT INTO prestamos (codigo_lib, titulo_lib, matricula, nom_usu, fecha_prestamo, estatus_prestamo)
-                VALUES ('$codigoLibro', '$titulo', '$matriculap', '$nombre', '$fechaPrestamo', 'PRESTADO')";
+                $fechaActual = new DateTime();
+                $fechaActual->add(new DateInterval('P7D'));
+                $fechalimite = $fechaActual->format('Y-m-d');
+                $sql2 = "INSERT INTO prestamos (codigo_lib, titulo_lib, matricula, nom_usu, fecha_prestamo, fecha_limite, estatus_prestamo)
+                VALUES ('$codigoLibro', '$titulo', '$matriculap', '$nombre', '$fechaPrestamo', '$fechalimite','PRESTADO')";
                 if ($conn->query($sql2) === TRUE) {
                     echo "<script>alert('Libro apartado con éxito'); window.location.href = 'menuFisicos.php';</script>";
                 } else {

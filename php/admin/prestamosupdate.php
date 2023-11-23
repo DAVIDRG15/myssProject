@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $estatusQuery = $conn->query("SELECT estatus_prestamo FROM prestamos WHERE Folio = '$Folio'");
     $estatusRow = $estatusQuery->fetch_assoc();
     $estatusPrestamo = $estatusRow['estatus_prestamo'];
-    if($estatusPrestamo == 'DEVUELTO'){
+    if ($estatusPrestamo == 'DEVUELTO' || $estatusPrestamo == 'DEVUELTO EN MAL ESTADO') {
         $sql = "UPDATE prestamos SET fecha_devolucion='$fecha_devolucion', receptor='$nombrep' WHERE Folio='$Folio'";
         if ($conn->query($sql) === TRUE) {
             if ($conn->affected_rows > 0) {
