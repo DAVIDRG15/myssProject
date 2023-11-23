@@ -147,6 +147,6 @@ if ($result->num_rows > 0) {
 } else {
     echo "0 resultados";
 }
-
+//Aún no terminan los cambios, falta lo del correo y lo de las sanciones
 $conn->close();
 ?>
