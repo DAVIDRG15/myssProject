@@ -2,7 +2,15 @@ body {
     background-color: #f4f2ed;
 }
 
-nav
+nav,
+footer {
+    background-color: rgb(0, 97, 53);
+    height: 110px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    
+}
+
+#nav1
 {
     width: 100%;
     top: 0;
