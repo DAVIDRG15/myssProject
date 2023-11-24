@@ -17,7 +17,7 @@
     </script>
 </head>
 
-<nav>
+<nav id="nav1">
     <div class="container">
         <br>
         <div class="d-flex justify-content-between">
