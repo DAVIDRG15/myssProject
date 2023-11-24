@@ -84,6 +84,15 @@ if (isset($_GET['devuelto']) && $_GET['devuelto'] == 'true') {//devuelto
         }
         $sqlUpdatePrestamo = "UPDATE prestamos SET fecha_devolucion = '$fecha_devolucion', estatus_prestamo = 'DEVUELTO', receptor = '$nombrep' WHERE Folio = '$Foliop'";
         $conn->query($sqlUpdatePrestamo);
+        $timestamp_devolucion = strtotime($fecha_devolucion);
+        $timestamp_limite = strtotime($fecha_limite);
+        $diferencia_segundos = $timestamp_devolucion - $timestamp_limite;
+        $diferencia_dias = floor($diferencia_segundos / (60 * 60 * 24));
+        if ($timestamp_devolucion > $timestamp_limite) {
+            $deudadias=$diferencia_dias*15;
+            $sqlUpdatedeudadia = "UPDATE multa SET deuda = deuda + $deudadias  WHERE matricula = '$matriculam'";
+            $conn->query($sqlUpdatedeudadia);
+        }
         echo "<script>alert('Prestamo actualizado correctamente'); window.location.href = 'prestamos.php';</script>";
         exit();
     } else {
@@ -122,8 +131,17 @@ if (isset($_GET['maledo']) && $_GET['maledo'] == 'true') {//devuelto en mal esta
         }
         $sqlUpdatePrestamo = "UPDATE prestamos SET fecha_devolucion = '$fecha_devolucion', estatus_prestamo = 'DEVUELTO EN MAL ESTADO', receptor = '$nombrep' WHERE Folio = '$Foliop'";
         $conn->query($sqlUpdatePrestamo);
-        $sqlUpdatePrestamo = "UPDATE multa SET deuda = deuda + 1000  WHERE matricula = '$matriculam'";
-        $conn->query($sqlUpdatePrestamo);
+        $sqlUpdatedeuda = "UPDATE multa SET deuda = deuda + 1000  WHERE matricula = '$matriculam'";
+        $conn->query($sqlUpdatedeuda);
+        $timestamp_devolucion = strtotime($fecha_devolucion);
+        $timestamp_limite = strtotime($fecha_limite);
+        $diferencia_segundos = $timestamp_devolucion - $timestamp_limite;
+        $diferencia_dias = floor($diferencia_segundos / (60 * 60 * 24));
+        if ($timestamp_devolucion > $timestamp_limite) {
+            $deudadias=$diferencia_dias*15;
+            $sqlUpdatedeudadia = "UPDATE multa SET deuda = deuda + $deudadias  WHERE matricula = '$matriculam'";
+            $conn->query($sqlUpdatedeudadia);
+        }
         echo "<script>alert('Prestamo actualizado correctamente'); window.location.href = 'prestamos.php';</script>";
         exit();
     } else {
