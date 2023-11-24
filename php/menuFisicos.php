@@ -41,7 +41,7 @@ $matriculap = $_SESSION["matricula"];
 
         <div class="buscarLibros">
             <form method="post" action="menuFisicos.php">
-                <label for="titulo_lib">Buscar por título:</label>
+                <label for="titulo_lib">Buscar por x título:</label>
                 <input type="text" name="titulo_lib" id="titulo_lib">
                 <input type="submit" value="Buscar">
             </form><br>
