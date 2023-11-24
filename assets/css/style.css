@@ -320,6 +320,10 @@ button.btnLogin:hover {
     font-size: 20px;
 }
 
+.cardBusqueda{
+    background-color: rgba(0, 128, 0, 0.16) !important;
+}
+
 @media (max-width: 767px) {
     .background-image {
         display: none;

@@ -36,7 +36,58 @@ $matriculap = $_SESSION["matricula"];
 <body>
 
     <div class="container menuFisicos">
+
         <h1 class="mt-4 mb-4">Libros Físicos</h1>
+
+        <div class="buscarLibros">
+            <form method="post" action="menuFisicos.php">
+                <label for="titulo_lib">Buscar por título:</label>
+                <input type="text" name="titulo_lib" id="titulo_lib">
+                <input type="submit" value="Buscar">
+            </form><br>
+            <?php
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+            $titulo_lib = $_POST["titulo_lib"];
+            $sql = "SELECT * FROM libro WHERE titulo_lib LIKE ?";
+            $stmt = $conn->prepare($sql);
+            $param = "%" . $titulo_lib . "%";
+            $stmt->bind_param("s", $param);
+            $stmt->execute();
+            $result = $stmt->get_result();
+        
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    echo '<div class="card mb-3 cardBusqueda">';
+                    echo '<div class="card-body">';
+                    echo '<h5 class="card-title">Título: ' . $row["titulo_lib"] . '</h5>';
+                    echo '<p class="card-text">Código: ' . $row["codigo_libro"] . '</p>';
+                    echo '<p class="card-text">Autor: ' . $row["autor_libro"] . '</p>';
+                    echo '<p class="card-text">Editorial: ' . $row["editorial"] . '</p>';
+                    echo '<p class="card-text">Categoría: ' . $row["categoria_libro"] . '</p>';
+                    echo '<p class="card-text">Subcategoría: ' . $row["subcategoria_libro"] . '</p>';
+                    echo '<p class="card-text">Cantidad: ' . $row["cantidad"] . '</p>';
+                    echo '<p class="card-text">Estatus: ' . $row["estatus"] . '</p>';
+                    if ($row["estatus"] == "DISPONIBLE") {
+                        echo '<a href="menuFisicos.php?id=' . $row["codigo_libro"] . '&apartar=true" class="btn btn-success btnLogin mb-4">Apartar</a>';
+                    }
+                    if ($row["estatus"] == "PRESTAMO") {
+                        echo '<a href="menuFisicos.php?id2=' . $row["codigo_libro"] . '&reservar=true" class="btn btn-success btnLogin mb-4">Reservar</a>';
+                    }
+                    echo '</div>';
+                    echo '</div>';
+                }
+
+                
+
+            } else {
+                echo "No se encontraron resultados";
+            }
+
+            $stmt->close();
+        }
+        ?>
+        </div>
 
         <div class="container read mt-2 mb-4">
             <?php 
@@ -95,12 +146,13 @@ $matriculap = $_SESSION["matricula"];
                 header("Location: menuFisicos.php");
                 exit();
             }
+            
             $sql = "SELECT * FROM libro";
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
-                    echo '<div class="card mb-3">';
+                    echo '<div class="card mb-3 cardP">';
                     echo '<div class="card-body">';
                     echo '<h5 class="card-title">Título: ' . $row["titulo_lib"] . '</h5>';
                     echo '<p class="card-text">Código: ' . $row["codigo_libro"] . '</p>';
