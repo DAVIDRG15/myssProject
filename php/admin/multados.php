@@ -1,19 +1,13 @@
 <?php
 include '../conexion.php';
 
-// $sql = "SELECT matricula, nombre_usu, correo FROM usuario";
-// $result = $conn->query($sql);
-
-// if ($result->num_rows > 0) {
-//     while ($row = $result->fetch_assoc()) {
-//         $matricula = $row['matricula'];
-//         $nombre = $row['nombre_usu'];
-//         $correo = $row['correo'];
-
-//         $sqlInsert = "INSERT INTO multa (matriculam, nombrem, correom) VALUES ('$matricula', '$nombre', '$correo')";
-//         $conn->query($sqlInsert);
-//     }
-// }
+if (isset($_GET['pagado']) && $_GET['pagado'] == 'true') {//recogido
+    $matriculam = $_GET['id4'];
+    $sql = "UPDATE multa SET deuda=0 WHERE matriculam='$matriculam'";
+    $conn->query($sql);
+    echo "<script>alert('Multa actualizada correctamente'); window.location.href = 'multas.php';</script>";
+    exit();
+    }
 $sql = "SELECT * FROM multa";
 $result = $conn->query($sql);
 
@@ -26,6 +20,9 @@ if ($result->num_rows > 0) {
         echo '<p class="card-text">Nombre: ' . $row["nombrem"] . '</p>';
         echo '<p class="card-text">Correo: ' . $row["correom"] . '</p>';
         echo '<p class="card-text">Deuda: ' . $row["deuda"] . '</p>';
+        if ($row["deuda"] >0) {
+            echo '<a href="multas.php?id4=' . $row["matriculam"] . '&pagado=true" class="btn btn-success btnLogin mb-4">Pagado</a> ';
+        }
         echo '</div>';
         echo '</div>';
     }
