@@ -41,9 +41,9 @@ $matriculap = $_SESSION["matricula"];
 
         <div class="buscarLibros">
             <form method="post" action="menuFisicos.php">
-                <label for="titulo_lib">Buscar por título:</label>
-                <input type="text" name="titulo_lib" id="titulo_lib">
-                <input type="submit" value="Buscar">
+                <label for="titulo_lib"></label>
+                <input type="text" name="titulo_lib" id="titulo_lib" placeholder="Busca por título">
+                <input type="submit" id="submit" value="Buscar">
             </form><br>
             <?php
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
