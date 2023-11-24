@@ -44,18 +44,18 @@
     </div>
 
     <ul id="box-search">
-        <li><a href="librosvirutales1.php">Física 1</a></li>
-        <li><a href="librosvirutales1.php">Física 2</a></li>
-        <li><a href="librosvirutales1.php">Química 1</a></li>
+        <li><a href="librosvirtuales1.php">Física 1</a></li>
+        <li><a href="librosvirtuales1.php">Física 2</a></li>
+        <li><a href="librosvirtuales1.php">Química 1</a></li>
         <li><a href="librosvirtuales1.php">Análisis y diseño de sistemas</a></li>
         <li><a href="librosvirtuales1.php">Sistemas y organizaciones</a></li>
         <li><a href="librosvirtuales1.php">Analisis de sistemas, diseños y metodos</a></li>
-        <li><a href="librosvirutales1.php">Geometría analítica y calculo 2</a></li>
+        <li><a href="librosvirtuales1.php">Geometría analítica y calculo 2</a></li>
         <li><a href="librosvirtuales1.php">Elementos de Cálculo Diferencial</a></li>
-        <li><a href="librosvirutales1.php">Cálculo diferencial e integral</a></li>
+        <li><a href="librosvirtuales1.php">Cálculo diferencial e integral</a></li>
         <li><a href="librosvirtuales1.php">Cómo programar en Java</a></li>
-        <li><a href="librosvirutales1.php">Java 2</a></li>
-        <li><a href="librosvirutales1.php">Introduccion a la programación con Java</a></li>
+        <li><a href="librosvirtuales1.php">Java 2</a></li>
+        <li><a href="librosvirtuales1.php">Introduccion a la programación con Java</a></li>
         <li><a href="librosvirtuales2.php">Introducción a la programación con Python 3</a></li>
         <li><a href="librosvirtuales2.php">Python para todos</a></li>
         <li><a href="librosvirtuales2.php">Algoritmos y estructuras de datos en Python</a></li>
