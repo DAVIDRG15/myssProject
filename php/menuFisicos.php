@@ -12,6 +12,8 @@ $matriculap = $_SESSION["matricula"];
     <title>Admin - Menú Libros Físicos</title>
     <!-- CSS -->
     <link rel="stylesheet" href="../assets/css/style.css">
+    <!--icono-->
+    <script src="https://kit.fontawesome.com/41690c9fd1.js" crossorigin="anonymous"></script>
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -29,6 +31,7 @@ $matriculap = $_SESSION["matricula"];
                     VOLVER
                 </button>
             </a>
+            
         </div>
     </div>
 </nav>
@@ -37,13 +40,14 @@ $matriculap = $_SESSION["matricula"];
 
     <div class="container menuFisicos">
 
+
         <h1 class="mt-4 mb-4">Libros Físicos</h1>
 
         <div class="buscarLibros">
             <form method="post" action="menuFisicos.php">
-                <label for="titulo_lib">Buscar por x título:</label>
-                <input type="text" name="titulo_lib" id="titulo_lib">
-                <input type="submit" value="Buscar">
+                <label for="titulo_lib"></label>
+                <input type="text" name="titulo_lib" id="titulo_lib" placeholder="Busca por título">
+                <input type="submit" id="submit" value="Buscar">
             </form><br>
             <?php
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -179,7 +183,8 @@ $matriculap = $_SESSION["matricula"];
         ?>
         </div>
     </div>
-
+             <!-- JavaScript -->
+    <script src="../assets/js/script.js"></script>
 </body>
 
 <footer></footer>
