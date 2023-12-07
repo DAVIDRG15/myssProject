@@ -254,6 +254,12 @@ button.btnLogin:hover {
     color: #f4f2ed;
 }
 
+.btn.btn-success {
+    background-color: #620000 !important;
+    border-color: #620000;
+    color: #f4f2ed;
+}
+
 #ctn-icon-search {
     margin-top: auto;
     margin-top: auto;
